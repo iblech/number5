@@ -1,0 +1,77 @@
+\documentclass[a4paper,ngerman]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amsthm,amssymb,amscd,color,graphicx,environ}
+\usepackage{framed}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+
+\usepackage{geometry}
+\geometry{tmargin=1.5cm,bmargin=0.8cm,lmargin=3cm,rmargin=3cm}
+
+\setlength{\unitlength}{1cm}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\renewcommand*\theenumi{\alph{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+
+\newlength{\aufgabenskip}
+\setlength{\aufgabenskip}{1.4em}
+\newcounter{aufgabennummer}
+\newenvironment{aufgabe}[1]{
+  \addtocounter{aufgabennummer}{1}
+  \textbf{Aufgabe \theaufgabennummer.} \emph{#1} \par
+}{\vspace{\aufgabenskip}}
+\newenvironment{aufgabeE}[1]{\begin{aufgabe}{#1}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+
+\begin{document}
+
+\begin{center}
+  Übungsblatt zur Vorlesung \\
+  \emph{Geheimnis der Zahl 5}
+\end{center}
+
+\begin{aufgabe}{Ableitung vs. Umkehrfunktion}
+Finde eine bijektive differenzierbare Funktion~$\RR^+ \to \RR^+$, deren
+Ableitung gleich ihrer Umkehrfunktion ist.
+\end{aufgabe}
+
+\begin{aufgabe}{Conways Armee}
+Ein unendlich ausgedehntes Damebrett sei in zwei Hälften zerteilt. Im unteren
+Teil darf man beliebig viele Damesteine platzieren. Ziel des Spiels ist es,
+einen Damestein möglichst hoch in das obere Spielfeld zu
+bringen. Dabei darf nur folgender Spielzug angewendet werden: Ein Stein
+darf einen (horizontal oder vertikal) benachbarten Stein überspringen, wenn das
+Zielfeld unbesetzt ist. Der übersprungene Stein wird dann aus dem Spiel
+entfernt.
+\begin{enumerate}
+\item Überzeuge dich davon, dass man, um Höhe~1, 2, 3 bzw. 4 über der
+Trennlinie zu erreichen, mit~2, 4, 8 bzw. \sout{16} 20 Steinen beginnen muss.
+\item Zeige, dass Höhe~5 mit keiner endlichen Anzahl von Steinen erreichbar
+ist.
+
+\emph{Tipp:} Weise den Spielsteinen eine von der Manhattan-Entfernung zum
+angepeilten Zielstein abhängige Bewertung zu.
+\end{enumerate}
+\end{aufgabe}
+
+Noch zu \TeX{}en:
+\begin{itemize}
+\item Ein Kästchen verschwindet.
+\item Grenzwert aufeinanderfolgender Fibonacci-Zahlen.
+\end{itemize}
+
+\end{document}
