@@ -1,0 +1,91 @@
+\documentclass[]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amsthm,amssymb,amscd,color,graphicx}
+  
+\theoremstyle{remark}
+\newtheorem{satz}{Satz}
+\newtheorem{aufg}{Aufgabe}
+\newtheorem{definition}{Definition}
+
+%opening
+\title{Sätze mit Fibonaccizahlen, dem goldenen Schnitt und der Zahl 5}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Eine Sammlung hübscher und teilweise überraschender Ergebnisse, worin Fibonaccizahlen, der goldene Schnitt oder die Zahl 5 eine besondere Rolle spielen. Keine Beweise.
+\end{abstract}
+
+\section{Fibonaccizahlen}
+\begin{definition}
+Die Folge $(f_n)_{n\geq 0}$ der Fibonaccizahlen ist rekursiv gegeben durch:
+\begin{equation*}
+f_0 = 0,\quad f_1 = 1,\quad f_{n+2} = f_{n+1} + f_{n} 
+\end{equation*}
+\end{definition}
+
+\begin{satz}
+Die gewöhnliche und die exponentiell erzeugende Funktion der Fibonaccizahlen $G_f$ resp. $E_f$ sind:
+\begin{align*}
+G_f(x) :=& \sum_{n\geq 0} f_nx^n = \frac{x}{1-x-x^2}, \\
+E_f(x) :=& \sum_{n\geq 0} \tfrac{1}{n!}f_n x^n = \tfrac{1}{\sqrt{5}}\exp\left(\tfrac{1+\sqrt{5}}{2}\, x\right) -
+\tfrac{1}{\sqrt{5}}\exp\left(\tfrac{1-\sqrt{5}}{2}\, x\right)
+\end{align*}
+\end{satz}
+
+\begin{satz}
+Sei $B_n$ eine $n\times n$-Matrix der Form
+\[
+\begin{pmatrix}
+1 & 1 & & &  &  \\
+1 & \ddots & \ddots   & &\multicolumn{2}{c}{\text{\huge 0}}  \\
+&\ddots &\ddots &\ddots  & &  \\
+& &\ddots &\ddots &\ddots   &  \\
+& & & \ddots &\ddots  &   1 \\
+ \multicolumn{2}{c}{\text{\huge 0}}  & & &  1&  1\\
+\end{pmatrix}
+\] 
+Dann ist die Permanente von $B_n$ gleich $ f_{n+1} $.
+\end{satz}
+
+\section{Goldener Schnitt}
+\begin{definition}
+Der goldene Schnitt $\Phi$ ist definiert als $\Phi := \tfrac{1+\sqrt{5}}{2}$. 
+\end{definition}
+\begin{satz}
+Der goldene Schnitt erfüllt die Gleichungen
+\[
+\Phi = 1 + \frac{1}{\Phi}, \qquad \Phi^{n+1} = f_{n+1}\Phi + f_n.
+\]
+\end{satz}
+
+\begin{satz}
+Sei $f : \mathbb{R}^{\geq 0} \longrightarrow\mathbb{R}^{\geq 0} $ diejenige differenzierbare und bijektive Funktion, deren erste Ableitung gleich ihrer Umkehrfunktion ist. Dann ist $f$ gegeben durch:
+\[
+f(x) = \left(\tfrac{1}{\Phi}\right)^{\tfrac{1}{\Phi}} x^\Phi.
+\]
+\end{satz}
+
+\section{Die Zahl 5}
+\begin{definition}
+Die Zahl $5$ ist gleich $1+1+1+1+1$.
+\end{definition}
+\begin{satz} (Pentagonalzahlensatz.) Die Pentagonalzahlen sind definiert durch $p_n := \tfrac{3n^2-n}{2}$ und berechnen die Anzahl der Steine, die benötigt werden, um $n$ ineinander liegende regelmäßige Fünfecke zu legen, welche eine Ecke gemeinsam haben.\\
+Die Partitionszahlen werden bezeichnet durch $p(n)$ und zählen die Möglichkeiten, die Zahl $n$ als Summe positiver ganzer Zahlen zu schreiben. Dann gilt:
+\begin{align*}
+\frac{1}{(1-x)(1-x^2)(1-x^3)(1-x^4)\ldots} &= \sum_{n\geq 0} p(n) \,x^n\qquad \text{und} \\
+(1-x)(1-x^2)(1-x^3)(1-x^4)\ldots &= \sum_{n \in \mathbb{Z}} (-1)^n x^{p_n}.
+\end{align*}
+\end{satz}
+\begin{satz} (Fünferschritte bei Partitionszahlen.)
+\[
+\frac{5\left((1-x^5)(1-x^{10})(1-x^{15})\ldots \right)^5 }{\left((1-x)(1-x^2)(1-x^3)(1-x^4)\ldots\right)^6} 
+= \sum_{n\geq 1} p(5n-1)\,x^n
+\]
+\end{satz}
+\end{document}
