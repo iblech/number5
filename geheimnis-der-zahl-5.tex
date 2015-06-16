@@ -2,13 +2,15 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage{amsmath,amsthm,amssymb,amscd,color,graphicx,environ}
+\usepackage{amsmath,amsthm,amssymb,amscd,color,graphicx,environ,mathtools}
 \usepackage{framed}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{lmodern}
 \usepackage{multicol}
 \usepackage[normalem]{ulem}
 \usepackage{hyperref}
+
+\newcommand{\defeq}{\vcentcolon=}
 
 \usepackage{geometry}
 \geometry{tmargin=1.5cm,bmargin=4cm,lmargin=3cm,rmargin=3cm}
@@ -138,6 +140,19 @@ Identität $P^2 = D^2 + H^2$.
 \end{enumerate}
 \end{aufgabe}
 
+\begin{aufgabe}{Ikosaeder und Dodekaeder}
+Sei einem regelmäßigen Ikosaeder ein regelmäßiges Dodekaeder einbeschrieben
+(Seitenflächenmittelpunkte auf Ecken). Zeige, dass das Verhältnis der Kantenlängen
+beider Objekte gleich $3:\Phi$ ist.
+\end{aufgabe}
+
+\begin{aufgabe}{Rotation um $72^\circ$}
+\begin{enumerate}
+\item Zeige: Die dreidimensionale Rotation um $72^\circ = \frac{2\pi}{5}$ hat Spur~$\Phi$.
+\item Zeige: Die zweidimensionale Rotation um~$72^\circ$ hat Spur~$\frac{1}{\Phi}$.
+\end{enumerate}
+\end{aufgabe}
+
 \begin{aufgabe}{Ein naiver Algorithmus für Fibonacci-Zahlen}
 Eine ganz naive Methode, die~$n$-te Fibonacci-Zahl zu bestimmen, besteht
 darin, die beiden Vorgänger zu bestimmen und dann zu summieren. Wie viele
@@ -146,19 +161,91 @@ Zwischenergebnisse merkt und daher viele Fibonacci-Zahlen immer wieder
 berechnet?
 \end{aufgabe}
 
+\begin{aufgabe}{Erzeugende Funktionen für Fibonacci-Zahlen}
+\begin{enumerate}
+\item Zeige, dass die gewöhnliche und exponentiell erzeugende Funktionen der
+Fibonacci-Zahlen durch
+\begin{align*}
+  \sum_{n\geq 0} f_{n+1}x^n &= \frac{1}{1-x-x^2} \qquad\text{bzw.} \\
+  \sum_{n\geq 0} \tfrac{1}{n!}f_n x^n &= \tfrac{1}{\sqrt{5}}\exp\left(\tfrac{1+\sqrt{5}}{2}\, x\right) - \tfrac{1}{\sqrt{5}}\exp\left(\tfrac{1-\sqrt{5}}{2}\, x\right)
+\end{align*}
+gegeben sind.
+\item Zeige weiter:
+\begin{align*}
+\sum_{n\geq 0} f_{n+1}^2x^n &= \frac{2}{5}\cdot\frac{1}{1+x}\ +\ \frac{1}{5}\cdot\frac{3-2x}{1-3x+x^2}\\
+\sum_{n\geq 0} f_{n+1}^3x^n &= \frac{3}{5}\cdot\frac{1}{1+x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1-4x-x^2} \\
+\sum_{n\geq 0} f_{n+1}^4x^n &= \frac{6}{25}\cdot\frac{1}{1-x}\ +\ \frac{4}{25}\cdot\frac{3+2x}{1+3x+x^2}\ +\ \frac{1}{25}\cdot\frac{7-2x}{1-7x+x^2}\\
+\sum_{n\geq 0} f_{n+1}^5x^n &= \frac{2}{5}\cdot\frac{1}{1-x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1+4x-x^2}\ +\ \frac{1}{5}\cdot\frac{1}{1-11x-x^2}
+\end{align*}
+Die einzelnen Summanden haben alle eine besondere Bedeutung. Welche? Wie lautet
+die erzeugende Funktion einer beliebigen Potenz von Fibonacci-Zahlen?
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Wallsche Vermutung}
+Bekanntlich gilt~$f_5 = 5$. Allgemeiner gibt es für jede positive Zahl~$k$ eine
+positive Zahl~$r$ sodass~$f_{r \NN} \subseteq k \NN$. Sei die kleinste solche
+Zahl~$r(k)$. Beweise oder widerlege: Für Primzahlen~$p$ gilt~$r(p^\ell) =
+p^{\ell-1} r(p)$. Insbesondere ist~$f_{5^\ell}$ stets durch~$5$ teilbar.
+\end{aufgabe}
+
+\begin{aufgabe}{Fibonacci-Zahlen als Permanente}
+Zeige: Die Permanente einer~$(n \times n)$-Bandmatrix, die auf der
+Hauptdiagonale und den beiden Nebendiagonalen mit Einsern und sonst nur mit
+Nullern besetzt ist, ist~$f_{n+1}$.
+\end{aufgabe}
+
+\begin{aufgabe}{Semistabilität von Vektorbündeln [Andrei Okounkov]}
+Sei $E$ ein Vektorbündel auf $\mathbb{CP}^2$, das in eine exakte Sequenz der
+Form
+\[
+0 \longrightarrow \mathcal{O}^s \stackrel{M}{\longrightarrow} \mathcal{O}(1)^{r+s} \longrightarrow E \longrightarrow 0
+\]
+passt. Dann ist $E$ genau dann semistabil (d.\,h. $\tfrac{\chi(U(n))}{\dim U}\leq\tfrac{\chi(E(n))}{\dim E}$ für Unterbündel $U$ von $E$ und große $n$), wenn 
+\[
+\frac{s}{r}\ \in\
+\left\{\frac{0}{1},\frac{1}{2},\frac{3}{5},\frac{8}{13},\frac{21}{34},\ldots
+\right\} \cup \left\{ \alpha\ |\ \alpha > \frac{1}{\Phi} \right\}. \]
+\end{aufgabe}
+
+\begin{aufgabe}{Pentagonal- und Partitionszahlen}
+Die Pentagonalzahlen sind definiert durch $p_n \defeq \tfrac{3n^2-n}{2}$ und
+berechnen die Anzahl der Steine, die benötigt werden, um~$n$ ineinander
+liegende regelmäßige Fünfecke zu legen, welche eine Ecke gemeinsam haben. Die
+Partitionszahlen werden bezeichnet durch~$p(n)$ und zählen die Möglichkeiten,
+die Zahl~$n$ als Summe positiver ganzer Zahlen zu schreiben.
+\begin{enumerate}
+\item Zeige folgenden Zusammenhang zwischen den Pentagonal- und den
+Partitionszahlen:
+\begin{align*}
+\frac{1}{(1-x)(1-x^2)(1-x^3)(1-x^4)\ldots} &= \sum_{n\geq 0} p(n) \,x^n \qquad\text{und} \\
+(1-x)(1-x^2)(1-x^3)(1-x^4)\ldots &= \sum_{n \in \mathbb{Z}} (-1)^n x^{p_n}.
+\end{align*}
+\item Verifiziere folgende Identität über Fünferschritte bei Partitionszahlen:
+\[
+\frac{5\left((1-x^5)(1-x^{10})(1-x^{15})\ldots \right)^5 }{\left((1-x)(1-x^2)(1-x^3)(1-x^4)\ldots\right)^6} 
+= \sum_{n\geq 1} p(5n-1)\,x^n. \]
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Dreiecke mit ganzzahligen Seitenlängen [Vadim Gorin]}
+Sei ein Dreieck mit ganzzahligen Seitenlängen und einem rechten Winkel gegeben.
+Zeige, dass seine Hypothenuse mindestens die Länge~5 hat.
+\end{aufgabe}
+
+\begin{aufgabe}{Summe von fünf Kuben [Massimiliano Mella]}
+Zeige: Ein generisches homogenes Polynom vom Grad~3 in vier Variablen kann auf
+eindeutige Art und Weise als Summe von fünf Kuben von Linearformen geschrieben werden
+\end{aufgabe}
+
 \vfill
 
 Noch zu \TeX{}en:
 \begin{itemize}
 \item \url{http://math.ucr.edu/home/baez/six.html}
 \item \url{http://en.wikipedia.org/wiki/Wythoff%27s_game}
-\item Beweise: $\sum_{i=0}^n F_i^2 = F_n F_{n+1}$ graphisch, und zwar mit der
-Skizze aus
-\url{http://math.stackexchange.com/questions/733754/visually-stunning-math-concepts-which-are-easy-to-explain}.
 \item \url{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}, Seite 4, oben:
 kombinatorische Interpretation der Fibonacci-Zahlen
-\item Simons Aufgaben:
-\url{github.com/NicolasMalebranche/Latex/tree/master/JHE%20S%C3%A4tze}
 \end{itemize}
 
 Bis Ende des Sommersemesters zu erledigen:
