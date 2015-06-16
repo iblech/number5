@@ -38,6 +38,7 @@
 
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\RR}{\mathbb{R}}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
 \begin{document}
 
@@ -238,12 +239,27 @@ Zeige: Ein generisches homogenes Polynom vom Grad~3 in vier Variablen kann auf
 eindeutige Art und Weise als Summe von fünf Kuben von Linearformen geschrieben werden
 \end{aufgabe}
 
+\begin{aufgabe}{Wythoffs Spiel}
+Zwei Spieler spielen folgendes Spiel: Gegeben sind zwei Haufen mit~$n$
+bzw.~$m$ Spielsteinen. Die Spieler nehmen abwechselnd Spielsteine von
+den Haufen weg, und zwar entweder eine beliebige Anzahl von einem der
+Haufen oder die gleiche Anzahl von beiden Haufen. Gewonnen hat der
+Spieler, der die letzten Spielsteine wegnimmt.
+\begin{enumerate}
+\item Überzeige dich davon, dass für $(n,m) = (1,2),(3,5),(4,7),(6,10)$
+oder $(8,13)$ der anziehende Spieler bei perfektem Spiel verliert.
+\item Zeige, dass alle Positionen $(n,m)$ (mit $n\leq m$), in denen der
+anziehende Spieler bei perfektem Spiel verliert, durch die Formeln
+\[ n = \floor{k\phi}, \quad m = \floor{k\phi^2} \]
+mit $k\in\NN$ gegeben sind.
+\end{enumerate}
+\end{aufgabe}
+
 \vfill
 
 Noch zu \TeX{}en:
 \begin{itemize}
 \item \url{http://math.ucr.edu/home/baez/six.html}
-\item \url{http://en.wikipedia.org/wiki/Wythoff%27s_game}
 \item \url{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}, Seite 4, oben:
 kombinatorische Interpretation der Fibonacci-Zahlen
 \end{itemize}
