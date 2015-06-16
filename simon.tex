@@ -27,17 +27,36 @@ Die Folge $(f_n)_{n\geq 0}$ der Fibonaccizahlen ist rekursiv gegeben durch:
 \begin{equation*}
 f_0 = 0,\quad f_1 = 1,\quad f_{n+2} = f_{n+1} + f_{n} 
 \end{equation*}
+Die Folge beginnt mit
+\[
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181,6765, \ldots \]
 \end{definition}
 
 \begin{satz}
 Die gewöhnliche und die exponentiell erzeugende Funktion der Fibonaccizahlen $G_f$ resp. $E_f$ sind:
 \begin{align*}
-G_f(x) :=& \sum_{n\geq 0} f_nx^n = \frac{x}{1-x-x^2}, \\
+G_f(x) :=& \sum_{n\geq 0} f_{n+1}x^n = \frac{1}{1-x-x^2}, \\
 E_f(x) :=& \sum_{n\geq 0} \tfrac{1}{n!}f_n x^n = \tfrac{1}{\sqrt{5}}\exp\left(\tfrac{1+\sqrt{5}}{2}\, x\right) -
 \tfrac{1}{\sqrt{5}}\exp\left(\tfrac{1-\sqrt{5}}{2}\, x\right)
 \end{align*}
 \end{satz}
-
+\begin{satz} Erzeugende Funktionen von Potenzen der Fibonaccizahlen:
+\begin{align*}
+\sum_{n\geq 0} f_{n+1}^2x^n &= \frac{2}{5}\cdot\frac{1}{1+x}\ +\ \frac{1}{5}\cdot\frac{3-2x}{1-3x+x^2}\\
+\sum_{n\geq 0} f_{n+1}^3x^n &= \frac{3}{5}\cdot\frac{1}{1+x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1-4x-x^2} \\
+\sum_{n\geq 0} f_{n+1}^4x^n &= \frac{6}{25}\cdot\frac{1}{1-x}\ +\ \frac{4}{25}\cdot\frac{3+2x}{1+3x+x^2}\ +\ \frac{1}{25}\cdot\frac{7-2x}{1-7x+x^2}\\
+\sum_{n\geq 0} f_{n+1}^5x^n &= \frac{2}{5}\cdot\frac{1}{1-x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1+4x-x^2}\ +\ \frac{1}{5}\cdot\frac{1}{1-11x-x^2}
+\end{align*}
+Die einzelnen Summanden haben alle eine besondere Bedeutung. Welche? Wie lautet die erzeugende Funktion einer beliebigen Potenz von Fibonaccizahlen?
+\end{satz}
+\begin{satz}(Wallsche Vermutung)
+\[f_5 = 5 \]
+Allgemeiner gibt es für jede positive Zahl $k$ eine positive Zahl $r$, so daß gilt:
+\[ f_{r\mathbb{N}} \subset k\mathbb{N}   \] 
+Bezeichnet man die kleinste solche Zahl mit $r(k)$, so gilt für Primzahlen $p$ vermutlich 
+\[ r(p^l) = p^{l-1} r(p) \]
+Insbesondere ist $f_{5^l} $ stets durch $5^l$ teilbar.
+\end{satz}
 \begin{satz}
 Sei $B_n$ eine $n\times n$-Matrix der Form
 \[
@@ -52,6 +71,21 @@ Sei $B_n$ eine $n\times n$-Matrix der Form
 \] 
 Dann ist die Permanente von $B_n$ gleich $ f_{n+1} $.
 \end{satz}
+\begin{satz} (Danke an Andrei Okunkow.)
+Sei $E$ ein Vektorbündel auf $\mathbb{CP}^2$, das in eine exakte Sequenz
+\[
+0 \longrightarrow \mathcal{O}^s \stackrel{M}{\longrightarrow} \mathcal{O}(1)^{r+s} \longrightarrow E \longrightarrow 0
+\]
+paßt. ($M$ ist eine allgemeine Matrix aus Linearformen.) Dann ist $E$ semistabil (d.h. $\tfrac{\chi(U(n))}{\dim U}\leq\tfrac{\chi(E(n))}{\dim E}$ für Unterbündel $U$ von $E$ und große $n$) genau dann, wenn 
+\[
+\frac{s}{r}\ \in\  \left\{\frac{0}{1},\frac{1}{2},\frac{3}{5},\frac{8}{13},\frac{21}{34},\ldots \right\} \cup \left\{ \alpha\ |\ \alpha > \frac{1}{\Phi} \right\}
+\]
+
+\end{satz}
+\begin{definition} 
+Seien $\mathbf{F}_1 = 2$ und $\mathbf{F}_2=1$, gedacht als endliche Folgen und sei $\mathbf{F}_{n+2}:=\mathbf{F}_{n+1},\mathbf{F}_{n}$ die Konkatenation von Folgen. Dann ist die L\"ange von $\mathbf{F}_n$ gleich $f_n$ und es exisitert $\mathbf{F}:=\lim\limits_{n\rightarrow \infty} \mathbf{F}_n =  1,2,1,1,2,1,2,1,1,2,1,1,2,1,2,1,\ldots$. $\mathbf{F}$ wird Fibonacci-Wort genannt. Der Kettenbruch $$[0;\mathbf{F}] = \frac{1}{1+\frac{1}{2+\frac{1}{1+\frac{1}{1+\ldots}}}}= 0,72048466763213\ldots $$ ist eine extremale reelle Zahl.
+\end{definition}
+
 
 \section{Goldener Schnitt}
 \begin{definition}
@@ -70,10 +104,15 @@ Sei $f : \mathbb{R}^{\geq 0} \longrightarrow\mathbb{R}^{\geq 0} $ diejenige diff
 f(x) = \left(\tfrac{1}{\Phi}\right)^{\tfrac{1}{\Phi}} x^\Phi.
 \]
 \end{satz}
-
+\begin{satz}
+Sei einem regelmäßigen Ikosaeder ein regelmäßiges Dodekaeder einbeschrieben (Seitenflächenmittelpunkte auf Ecken). Dann ist das Verhältnis der Kantenlängen beider Objekte gleich $3:\Phi$.
+\end{satz}
+\begin{satz}
+Die dreidimensionale Rotation um $72° = \frac{2\pi}{5}$ hat Spur $\Phi$. Die zweidimensionale Rotation um $72°$ hat Spur $\frac{1}{\Phi}$.
+\end{satz}
 \section{Die Zahl 5}
 \begin{definition}
-Die Zahl $5$ ist gleich $1+1+1+1+1$.
+Die Zahl $5$ ist die Anzahl nichtähnlicher platonischer Körper.
 \end{definition}
 \begin{satz} (Pentagonalzahlensatz.) Die Pentagonalzahlen sind definiert durch $p_n := \tfrac{3n^2-n}{2}$ und berechnen die Anzahl der Steine, die benötigt werden, um $n$ ineinander liegende regelmäßige Fünfecke zu legen, welche eine Ecke gemeinsam haben.\\
 Die Partitionszahlen werden bezeichnet durch $p(n)$ und zählen die Möglichkeiten, die Zahl $n$ als Summe positiver ganzer Zahlen zu schreiben. Dann gilt:
@@ -88,4 +127,25 @@ Die Partitionszahlen werden bezeichnet durch $p(n)$ und zählen die Möglichkeiten
 = \sum_{n\geq 1} p(5n-1)\,x^n
 \]
 \end{satz}
+
+\begin{satz}
+(Danke an Vadim Gorin.) Sei $D$ ein Dreieck mit ganzzahligen Seitenlängen und einem rechten Winkel. Dann ist die kleinstmögliche Hypothenusenlänge gleich 5.
+\end{satz}
+
+\begin{satz}
+(Danke an Massimiliano Mella.) Ein generisches homogenes Polynom vom Grad 3 in 4 Variablen kann in eindeutiger Weise als Summe von 5 Kuben von Linearformen geschrieben werden (Sylvester/Clebsch).
+\end{satz}
+
+\begin{satz}
+Sachen, die ab $n\geq 5$ bösartig werden:
+\begin{itemize}
+\item Faktorisieren von Polynomen vom Grad $n$ über $\mathbb{C}$,
+\item Klassifizieren von $n$-Tupeln von Untervektorräumen eines gegebenen Vektorraums.
+\end{itemize}
+\end{satz}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.6]{3-4-5_1.png}
+\end{figure}
 \end{document}
