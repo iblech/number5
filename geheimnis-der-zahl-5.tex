@@ -1,4 +1,4 @@
-\documentclass[a4paper,ngerman]{scrartcl}
+\documentclass[a4paper,ngerman,twoside]{scrartcl}
 
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
@@ -57,7 +57,7 @@ Universität Augsburg
 \begin{aufgabe}{Ein Kästchen verschwindet!}
 \begin{enumerate}
 \item Die beiden Figuren bestehen offensichtlich aus denselben Stücken, haben
-aber unterschiedlichen Flächeninhalt! Was ist hier passiert?
+aber unterschiedlichen Flächeninhalt! Was ist passiert?
 \item Zeige: Der Quotient zweier aufeinanderfolgender Fibonacci-Zahlen nähert
 sich beliebig genau dem goldenen Schnitt an.
 \end{enumerate}
@@ -67,7 +67,7 @@ sich beliebig genau dem goldenen Schnitt an.
 \end{aufgabe}
 
 \begin{aufgabe}{Die Quadrate der Fibonacci-Zahlen}
-Es gilt die Identität~$\sum_{i=0}^n f_i^2 = f_n f_{n+1}$.
+Es gilt die Identität~$f_0^2 + f_1^2 + \cdots + f_n^2 = f_n f_{n+1}$.
 \begin{enumerate}
 \item Führe einen Induktionsbeweis.
 \item Argumentiere, wieso folgende Skizze die Behauptung auch schon beweist.
@@ -143,11 +143,11 @@ beider Objekte gleich $3:\Phi$ ist.
 \end{aufgabe}
 
 \begin{aufgabe}{Dreiecke mit ganzzahligen Seitenlängen [Vadim Gorin]}
-Sei ein Dreieck mit ganzzahligen Seitenlängen und einem rechten Winkel gegeben.
+Sei ein rechtwinkliges Dreieck mit ganzzahligen Seitenlängen gegeben.
 Zeige, dass seine Hypothenuse mindestens die Länge~5 hat.
 \end{aufgabe}
 
-\begin{center}\includegraphics[width=0.6\textwidth]{sonnenblume}\end{center}
+\begin{center}\includegraphics[width=0.65\textwidth]{sonnenblume}\end{center}
 
 \begin{aufgabe}{Rotation um $72^\circ$}
 \begin{enumerate}
@@ -167,9 +167,9 @@ Fibonacci-Zahlen durch
 gegeben sind.
 \item Zeige weiter:
 \begin{align*}
-\sum_{n\geq 0} f_{n+1}^2x^n &= \frac{2}{5}\cdot\frac{1}{1+x}\ +\ \frac{1}{5}\cdot\frac{3-2x}{1-3x+x^2}\\
-\sum_{n\geq 0} f_{n+1}^3x^n &= \frac{3}{5}\cdot\frac{1}{1+x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1-4x-x^2} \\
-\sum_{n\geq 0} f_{n+1}^4x^n &= \frac{6}{25}\cdot\frac{1}{1-x}\ +\ \frac{4}{25}\cdot\frac{3+2x}{1+3x+x^2}\ +\ \frac{1}{25}\cdot\frac{7-2x}{1-7x+x^2}\\
+\sum_{n\geq 0} f_{n+1}^2x^n &= \frac{2}{5}\cdot\frac{1}{1+x}\ +\ \frac{1}{5}\cdot\frac{3-2x}{1-3x+x^2} \\[0.2em]
+\sum_{n\geq 0} f_{n+1}^3x^n &= \frac{3}{5}\cdot\frac{1}{1+x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1-4x-x^2} \\[0.2em]
+\sum_{n\geq 0} f_{n+1}^4x^n &= \frac{6}{25}\cdot\frac{1}{1-x}\ +\ \frac{4}{25}\cdot\frac{3+2x}{1+3x+x^2}\ +\ \frac{1}{25}\cdot\frac{7-2x}{1-7x+x^2}\\[0.2em]
 \sum_{n\geq 0} f_{n+1}^5x^n &= \frac{2}{5}\cdot\frac{1}{1-x-x^2}\ +\ \frac{2}{5}\cdot\frac{1}{1+4x-x^2}\ +\ \frac{1}{5}\cdot\frac{1}{1-11x-x^2}
 \end{align*}
 Die einzelnen Summanden haben alle eine besondere Bedeutung. Welche? Wie lautet
@@ -181,13 +181,13 @@ die erzeugende Funktion einer beliebigen Potenz von Fibonacci-Zahlen?
 Die Pentagonalzahlen sind definiert durch $p_n \defeq \tfrac{3n^2-n}{2}$ und
 berechnen die Anzahl der Steine, die benötigt werden, um~$n$ ineinander
 liegende regelmäßige Fünfecke zu legen, welche eine Ecke gemeinsam haben. Die
-Partitionszahlen werden bezeichnet durch~$p(n)$ und zählen die Möglichkeiten,
+Partitionszahl~$p(n)$ zählt die Möglichkeiten,
 die Zahl~$n$ als Summe positiver ganzer Zahlen zu schreiben.
 \begin{enumerate}
 \item Zeige folgenden Zusammenhang zwischen den Pentagonal- und den
 Partitionszahlen:
 \begin{align*}
-\frac{1}{(1-x)(1-x^2)(1-x^3)(1-x^4)\ldots} &= \sum_{n\geq 0} p(n) \,x^n \qquad\text{und} \\
+\frac{1}{(1-x)(1-x^2)(1-x^3)(1-x^4)\ldots} &= \sum_{n\geq 0} p(n) \,x^n \qquad\text{und} \\[0.4em]
 (1-x)(1-x^2)(1-x^3)(1-x^4)\ldots &= \sum_{n \in \mathbb{Z}} (-1)^n x^{p_n}.
 \end{align*}
 \item Verifiziere folgende Identität über Fünferschritte bei Partitionszahlen:
@@ -196,7 +196,6 @@ Partitionszahlen:
 = \sum_{n\geq 1} p(5n-1)\,x^n. \]
 \end{enumerate}
 \end{aufgabe}
-\vspace*{-1em}
 
 \begin{aufgabe}{Conways Armee}
 Ein unendlich ausgedehntes Damebrett sei in zwei Hälften zerteilt. Im unteren
@@ -216,7 +215,7 @@ angepeilten Zielstein abhängige Bewertung zu.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{center}\includegraphics[width=0.45\textwidth]{goldene-spirale-4}\end{center}
+\begin{center}\includegraphics[width=0.46\textwidth]{goldene-spirale-2}\end{center}
 
 \begin{aufgabe}{Wythoffs Spiel}
 Zwei Spieler spielen folgendes Spiel: Gegeben sind zwei Haufen mit~$n$
