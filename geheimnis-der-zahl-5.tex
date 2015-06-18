@@ -44,6 +44,7 @@
 
 \begin{document}
 
+\thispagestyle{empty}
 Institut für Mathematik \\
 Universität Augsburg
 
@@ -76,46 +77,6 @@ Es gilt die Identität~$\sum_{i=0}^n f_i^2 = f_n f_{n+1}$.
 \end{center}
 \end{aufgabe}
 
-\begin{aufgabe}{Irrationalste Zahl}
-Formuliere präzise und beweise: Der goldene Schnitt ist die irrationalste Zahl.
-
-\emph{Tipp:} Kettenbruchentwicklung.
-\end{aufgabe}
-
-\begin{aufgabe}{Ableitung vs. Umkehrfunktion}
-Finde eine bijektive differenzierbare Funktion~$\RR^+ \to \RR^+$, deren
-Ableitung gleich ihrer Umkehrfunktion ist.
-\end{aufgabe}
-
-\begin{aufgabe}{Conways Armee}
-Ein unendlich ausgedehntes Damebrett sei in zwei Hälften zerteilt. Im unteren
-Teil darf man beliebig viele Damesteine platzieren. Ziel des Spiels ist es,
-einen Damestein möglichst hoch in das obere Spielfeld zu
-bringen. Dabei darf nur folgender Spielzug angewendet werden: Ein Stein
-darf einen (horizontal oder vertikal) benachbarten Stein überspringen, wenn das
-Zielfeld unbesetzt ist. Der übersprungene Stein wird dann aus dem Spiel
-entfernt.
-\begin{enumerate}
-\item Überzeuge dich davon, dass man, um Höhe~1, 2, 3 bzw. 4 über der
-Trennlinie zu erreichen, mit~2, 4, 8 bzw. \sout{16} 20 Steinen beginnen muss.
-\item Zeige, dass Höhe~5 mit keiner endlichen Anzahl von Steinen erreichbar
-ist.
-
-\emph{Tipp:} Weise den Spielsteinen eine von der Manhattan-Entfernung zum
-angepeilten Zielstein abhängige Bewertung zu.
-\end{enumerate}
-\end{aufgabe}
-
-\begin{aufgabe}{Auflösbarkeit quintischer Gleichungen}
-Zeige, dass Gleichungen vom Grad~5 und höher im Allgemeinen nicht durch
-Radikale auflösbar sind.
-
-\emph{Tipp:} Eine Gleichung ist genau dann durch Radikale auflösbar, wenn die
-zugehörige Galoisgruppe eine auflösbare Gruppe ist. Wenn man daher zeigt, dass
-die symmetrische Gruppe in~$n$ Ziffern für $n \geq 5$ nicht auflösbar ist, hat
-man schon viel gewonnen.
-\end{aufgabe}
-
 \begin{aufgabe}{Eine Zahl mit besonderer Dezimalbruchentwicklung}
 Es gilt:
 \[ \frac{1}{998999} =
@@ -127,17 +88,40 @@ Es gilt:
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Willmore-Satz}
-Sei~$M$ eine kompakte, orientierbare Minimalfläche in der dreidimensionalen
-Einheitssphäre~$S^3(1)$. Der Jacobi-Operator der zweiten Variation ist
-gegeben durch~$L=\Delta+|\sigma^2|+2$, wobei~$\sigma$ die zweite
-Fundamentalform von~$M$ und~$\Delta$ der Laplace-Operator der induzierten
-Metrik ist. Der Index von~$M$, $\mathrm{ind}(M)$, is definiert als die Anzahl
-negativer Eigenwerte von~$L$.
+\begin{aufgabe}{Von Fibonacci-Zahlen und Rechtecken}
+Gegeben sei eine Reihe von~$n$ Quadraten, die ein~$(1 \times n)$-Rechteck
+bilden. Wir möchten dieses Rechteck mit Monominos (also
+$(1 \times 1)$-Rechtecken) sowie Dominos ($(1\times 2)$-Rechtecken) überdecken.
 
-Sei~$M$ weiter nicht total geodätische Minimalfläche in~$S^3(1)$. Was ist
-eine untere Schranke für~$\mathrm{ind}(M)$ und für welche Minimalflächen wird diese
-angenommen?
+Zeige, dass die Anzahl von möglichen Überdeckungen des $(1 \times n)$-Rechtecks
+mittels Monominos und Dominos gleich~$f_n$ ist.
+\end{aufgabe}
+% \url{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}
+
+\begin{aufgabe}{Ein naiver Algorithmus für Fibonacci-Zahlen}
+Eine ganz naive Methode, die~$n$-te Fibonacci-Zahl zu bestimmen, besteht
+darin, die beiden Vorgänger zu bestimmen und dann zu summieren. Wie viele
+Rechenschritte sind dabei notwendig, wenn man sich \emph{nicht}
+Zwischenergebnisse merkt und daher viele Fibonacci-Zahlen immer wieder
+berechnet?
+\end{aufgabe}
+
+\begin{aufgabe}{Fibonacci-Zahlen als Permanente}
+Zeige: Die Permanente einer~$(n \times n)$-Bandmatrix, die auf der
+Hauptdiagonale und den beiden Nebendiagonalen mit Einsern und sonst nur mit
+Nullern besetzt ist, ist~$f_{n+1}$.
+\end{aufgabe}
+
+\begin{aufgabe}{Die irrationalste Zahl}
+Formuliere präzise und beweise: Der goldene Schnitt ist die irrationalste aller
+Zahlen.
+
+\emph{Tipp:} Kettenbruchentwicklung.
+\end{aufgabe}
+
+\begin{aufgabe}{Ableitung vs. Umkehrfunktion}
+Finde eine bijektive differenzierbare Funktion~$\RR^+ \to \RR^+$, deren
+Ableitung gleich ihrer Umkehrfunktion ist.
 \end{aufgabe}
 
 \begin{aufgabe}{Ein Lemma über goldene Dreiecke}
@@ -158,19 +142,18 @@ Sei einem regelmäßigen Ikosaeder ein regelmäßiges Dodekaeder einbeschrieben
 beider Objekte gleich $3:\Phi$ ist.
 \end{aufgabe}
 
+\begin{aufgabe}{Dreiecke mit ganzzahligen Seitenlängen [Vadim Gorin]}
+Sei ein Dreieck mit ganzzahligen Seitenlängen und einem rechten Winkel gegeben.
+Zeige, dass seine Hypothenuse mindestens die Länge~5 hat.
+\end{aufgabe}
+
+\begin{center}\includegraphics[width=0.6\textwidth]{sonnenblume}\end{center}
+
 \begin{aufgabe}{Rotation um $72^\circ$}
 \begin{enumerate}
 \item Zeige: Die dreidimensionale Rotation um $72^\circ = \frac{2\pi}{5}$ hat Spur~$\Phi$.
 \item Zeige: Die zweidimensionale Rotation um~$72^\circ$ hat Spur~$\frac{1}{\Phi}$.
 \end{enumerate}
-\end{aufgabe}
-
-\begin{aufgabe}{Ein naiver Algorithmus für Fibonacci-Zahlen}
-Eine ganz naive Methode, die~$n$-te Fibonacci-Zahl zu bestimmen, besteht
-darin, die beiden Vorgänger zu bestimmen und dann zu summieren. Wie viele
-Rechenschritte sind dabei notwendig, wenn man sich \emph{nicht}
-Zwischenergebnisse merkt und daher viele Fibonacci-Zahlen immer wieder
-berechnet?
 \end{aufgabe}
 
 \begin{aufgabe}{Erzeugende Funktionen für Fibonacci-Zahlen}
@@ -194,33 +177,6 @@ die erzeugende Funktion einer beliebigen Potenz von Fibonacci-Zahlen?
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Wallsche Vermutung}
-Bekanntlich gilt~$f_5 = 5$. Allgemeiner gibt es für jede positive Zahl~$k$ eine
-positive Zahl~$r$ sodass~$f_{r \NN} \subseteq k \NN$. Sei die kleinste solche
-Zahl~$r(k)$. Beweise oder widerlege: Für Primzahlen~$p$ gilt~$r(p^\ell) =
-p^{\ell-1} r(p)$. Insbesondere ist~$f_{5^\ell}$ stets durch~$5$ teilbar.
-\end{aufgabe}
-
-\begin{aufgabe}{Fibonacci-Zahlen als Permanente}
-Zeige: Die Permanente einer~$(n \times n)$-Bandmatrix, die auf der
-Hauptdiagonale und den beiden Nebendiagonalen mit Einsern und sonst nur mit
-Nullern besetzt ist, ist~$f_{n+1}$.
-\end{aufgabe}
-
-\begin{aufgabe}{Semistabilität von Vektorbündeln [Andrei Okounkov]}
-Sei $E$ ein Vektorbündel auf $\mathbb{CP}^2$, das in eine exakte Sequenz der
-Form
-\[
-0 \longrightarrow \mathcal{O}^s \stackrel{M}{\longrightarrow} \mathcal{O}(1)^{r+s} \longrightarrow E \longrightarrow 0
-\]
-passt. Dann ist $E$ genau dann semistabil (d.\,h. $\tfrac{\chi(U(n))}{\dim U}\leq\tfrac{\chi(E(n))}{\dim E}$ für Unterbündel $U$ von $E$ und große $n$), wenn 
-\[
-\frac{s}{r}\ \in\
-\left\{\frac{0}{1},\frac{1}{2},\frac{3}{5},\frac{8}{13},\frac{21}{34},\ldots
-\right\} \cup \left\{ \alpha\ |\ \alpha > \frac{1}{\Phi} \right\}. \]
-\end{aufgabe}
-\vspace*{-1em}
-
 \begin{aufgabe}{Pentagonal- und Partitionszahlen}
 Die Pentagonalzahlen sind definiert durch $p_n \defeq \tfrac{3n^2-n}{2}$ und
 berechnen die Anzahl der Steine, die benötigt werden, um~$n$ ineinander
@@ -240,16 +196,27 @@ Partitionszahlen:
 = \sum_{n\geq 1} p(5n-1)\,x^n. \]
 \end{enumerate}
 \end{aufgabe}
+\vspace*{-1em}
 
-\begin{aufgabe}{Dreiecke mit ganzzahligen Seitenlängen [Vadim Gorin]}
-Sei ein Dreieck mit ganzzahligen Seitenlängen und einem rechten Winkel gegeben.
-Zeige, dass seine Hypothenuse mindestens die Länge~5 hat.
+\begin{aufgabe}{Conways Armee}
+Ein unendlich ausgedehntes Damebrett sei in zwei Hälften zerteilt. Im unteren
+Teil darf man beliebig viele Damesteine platzieren. Ziel des Spiels ist es,
+einen Damestein möglichst hoch in das obere Spielfeld zu
+bringen. Dabei darf nur folgender Spielzug angewendet werden: Ein Stein
+darf einen (horizontal oder vertikal) benachbarten Stein überspringen, wenn das
+Zielfeld unbesetzt ist. Der übersprungene Stein wird dann aus dem Spiel
+entfernt.
+\begin{enumerate}
+\item Überzeuge dich davon, dass man, um Höhe~1, 2, 3 bzw. 4 über der
+Trennlinie zu erreichen, mit~2, 4, 8 bzw. \sout{16} 20 Steinen beginnen muss.
+\item Zeige, dass Höhe~5 mit keiner endlichen Anzahl von Steinen erreichbar
+ist.
+\emph{Tipp:} Weise den Spielsteinen eine von der Manhattan-Entfernung zum
+angepeilten Zielstein abhängige Bewertung zu.
+\end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Summe von fünf Kuben [Massimiliano Mella]}
-Zeige: Ein generisches homogenes Polynom vom Grad~3 in vier Variablen kann auf
-eindeutige Art und Weise als Summe von fünf Kuben von Linearformen geschrieben werden
-\end{aufgabe}
+\begin{center}\includegraphics[width=0.45\textwidth]{goldene-spirale-4}\end{center}
 
 \begin{aufgabe}{Wythoffs Spiel}
 Zwei Spieler spielen folgendes Spiel: Gegeben sind zwei Haufen mit~$n$
@@ -267,30 +234,58 @@ mit $k\in\NN$ gegeben sind.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Von Fibonacci-Zahlen und Rechtecken}
-Gegeben sei eine Reihe von~$n$ Quadraten, die ein~$(1 \times n)$-Rechteck
-bilden. Wir möchten dieses Rechteck mit Monominos (also
-$(1 \times 1)$-Rechtecken) sowie Dominos ($(1\times 2)$-Rechtecken) überdecken.
-
-Zeige, dass die Anzahl von möglichen Überdeckungen des $(1 \times n)$-Rechtecks
-mittels Monominos und Dominos gleich~$f_n$ ist.
+\begin{aufgabe}{Summe von fünf Kuben [Massimiliano Mella]}
+Zeige: Ein generisches homogenes Polynom vom Grad~3 in vier Variablen kann auf
+eindeutige Art und Weise als Summe von fünf Kuben von Linearformen geschrieben werden
 \end{aufgabe}
-% \url{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}
+
+\begin{aufgabe}{Auflösbarkeit quintischer Gleichungen}
+Zeige, dass Gleichungen vom Grad~5 und höher im Allgemeinen nicht durch
+Radikale auflösbar sind.
+
+\emph{Tipp:} Eine Gleichung ist genau dann durch Radikale auflösbar, wenn die
+zugehörige Galoisgruppe eine auflösbare Gruppe ist. Wenn man daher zeigt, dass
+die symmetrische Gruppe in~$n$ Ziffern für $n \geq 5$ nicht auflösbar ist, hat
+man schon viel gewonnen.
+\end{aufgabe}
+
+\begin{aufgabe}{Semistabilität von Vektorbündeln [Andrei Okounkov]}
+Sei $E$ ein Vektorbündel auf $\mathbb{CP}^2$, das in eine exakte Sequenz der
+Form
+\[
+0 \longrightarrow \mathcal{O}^s \stackrel{M}{\longrightarrow} \mathcal{O}(1)^{r+s} \longrightarrow E \longrightarrow 0
+\]
+passt. Dann ist $E$ genau dann semistabil (d.\,h. $\tfrac{\chi(U(n))}{\dim U}\leq\tfrac{\chi(E(n))}{\dim E}$ für Unterbündel $U$ von $E$ und große $n$), wenn 
+\[
+\frac{s}{r}\ \in\
+\left\{\frac{0}{1},\frac{1}{2},\frac{3}{5},\frac{8}{13},\frac{21}{34},\ldots
+\right\} \cup \left\{ \alpha\ |\ \alpha > \frac{1}{\Phi} \right\}. \]
+\end{aufgabe}
+\vspace*{-1em}
+
+\begin{aufgabe}{Wallsche Vermutung}
+Bekanntlich gilt~$f_5 = 5$. Allgemeiner gibt es für jede positive Zahl~$k$ eine
+positive Zahl~$r$ sodass~$f_{r \NN} \subseteq k \NN$. Sei die kleinste solche
+Zahl~$r(k)$. Beweise oder widerlege: Für Primzahlen~$p$ gilt~$r(p^\ell) =
+p^{\ell-1} r(p)$. Insbesondere ist~$f_{5^\ell}$ stets durch~$5$ teilbar.
+\end{aufgabe}
+
+\begin{aufgabe}{Minimalflächen in der dreidimensionalen Sphäre}
+Sei~$M$ eine kompakte, orientierbare Minimalfläche in der dreidimensionalen
+Einheitssphäre~$S^3(1)$. Der Jacobi-Operator der zweiten Variation ist
+gegeben durch~$L=\Delta+|\sigma^2|+2$, wobei~$\sigma$ die zweite
+Fundamentalform von~$M$ und~$\Delta$ der Laplace-Operator der induzierten
+Metrik ist. Der Index von~$M$, $\mathrm{ind}(M)$, is definiert als die Anzahl
+negativer Eigenwerte von~$L$.
+
+Sei~$M$ weiter nicht total geodätische Minimalfläche in~$S^3(1)$. Was ist
+eine untere Schranke für~$\mathrm{ind}(M)$ und für welche Minimalflächen wird diese
+angenommen?
+\end{aufgabe}
+
+\thispagestyle{empty}
 
 \vfill
-
-Noch zu \TeX{}en:
-\begin{itemize}
-\item \url{http://math.ucr.edu/home/baez/six.html}
-\end{itemize}
-
-Bis Ende des Sommersemesters zu erledigen:
-\begin{itemize}
-\item Tolles Layout überlegen: Je zwei Seitenlängen müssen im goldenen Schnitt
-zueinander stehen. Das jetzige Layout ist fast ungeändert von seinen eigenen
-Übungsblättern übernommen.
-\item Viele weitere kanonische und unkanonische Aufgaben finden.
-\item Darauf achten, dass die Gesamtzahl von Aufgaben eine Fibonacci-Zahl ist.
-\end{itemize}
+\begin{center}\includegraphics[scale=0.3]{goldene-spirale-8}\end{center}
 
 \end{document}
