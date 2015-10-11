@@ -23,6 +23,7 @@
 
 === Ausblick
 
+* Fibonacci-Zahlen im Apfelmännchen
 * 1/89er-Rätsel
 * Kettenbruchentwicklung von e
 * Knoten
