@@ -1,0 +1,26 @@
+=== Kettenbrüche
+
+* Beispiel: sqrt(2) = [1; 2, 2, 2, ...]
+* Weitere Beispiele
+* Euklidischer Algorithmus
+* Bestapproximation
+
+
+=== Goldener Schnitt
+
+* Definition des goldenen Schnitts
+* Vorkommen in Natur und Kunst
+* Kettenbruchentwicklung des goldenen Schnitts
+* Zusammenhang zu Fibonacci-Zahlen
+* Sonnenblumen und die Spongebob-Ananas
+
+
+=== Pi
+
+* Woher kommen die Näherungen 22/7 und 355/113?
+
+
+=== Ausblick
+
+* Kettebruchentwicklung von e
+* Knoten
