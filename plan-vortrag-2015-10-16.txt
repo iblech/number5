@@ -13,6 +13,7 @@
 * Kettenbruchentwicklung des goldenen Schnitts
 * Zusammenhang zu Fibonacci-Zahlen
 * Sonnenblumen und die Spongebob-Ananas
+* Schokoladenrätsel
 
 
 === Pi
@@ -22,5 +23,6 @@
 
 === Ausblick
 
-* Kettebruchentwicklung von e
+* 1/89er-Rätsel
+* Kettenbruchentwicklung von e
 * Knoten
