@@ -16,6 +16,10 @@
 * Schokoladenrätsel
 * Dame/Halma?
 
+Siehe auch:
+http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibnat2.html
+https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
+
 
 === Pi
 
