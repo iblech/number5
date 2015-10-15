@@ -14,6 +14,7 @@
 * Zusammenhang zu Fibonacci-Zahlen
 * Sonnenblumen und die Spongebob-Ananas
 * Schokoladenrätsel
+* Dame/Halma?
 
 
 === Pi
@@ -27,3 +28,11 @@
 * 1/89er-Rätsel
 * Kettenbruchentwicklung von e
 * Knoten
+
+
+=== Anschauungsmaterial zum Austeilen/Zeigen
+
+http://www.heartstarbooks.com/wp-content/uploads/2014/03/21253165_l.jpg
+https://www.flickr.com/photos/lucapost/694780262
+https://commons.wikimedia.org/wiki/File:Yellow_sunflower_001.JPG
+http://www.math.uni-hamburg.de/home/werner/Absolventenfeier2.06.Vortrag.pdf
