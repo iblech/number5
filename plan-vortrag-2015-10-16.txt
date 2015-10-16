@@ -54,5 +54,13 @@ https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
 Vi Hart zur Ananas von Spongebob:
 https://www.youtube.com/watch?v=gBxeju8dMho
 
+Rational Tangles:
+http://blog.sigfpe.com/2008/08/untangling-with-continued-fractions.html
+http://blog.sigfpe.com/2008/08/untangling-with-continued-fractions_16.html
+http://blog.sigfpe.com/2008/08/untangling-with-continued-fractions_23.html
+http://blog.sigfpe.com/2008/08/untangling-with-continued-fractions_31.html
+http://blog.sigfpe.com/2008/09/untangling-with-continued-fractions.html
+http://blog.sigfpe.com/2008/10/untangling-with-continued-fractions.html
+
 Programm, um interaktiv das Apfelmännchen und andere Fraktale zu erkunden:
 http://matek.hu/xaos/doku.php?id=downloads:main
