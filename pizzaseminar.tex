@@ -52,7 +52,12 @@ Ingo Blechschmidt
   \textbf{Pizzaseminar in Mathematik} \\
   \emph{Das Geheimnis der Zahl 5}
 \end{center}
-\vspace{1em}
+\vspace{0.5em}
+
+\begin{center}\href{https://commons.wikimedia.org/wiki/File:Roof_hafez_tomb.jpg}{\includegraphics[width=0.60\textwidth]{hafez-tomb}} \\
+\scriptsize Grab des Hafis in Shiras (Iran); Foto von Pentocelo (CC-lizensiert)\par
+\end{center}
+\vspace{0.5em}
 
 Die \emph{Folge der Fibonacci-Zahlen} beginnt mit
 \[
@@ -65,14 +70,19 @@ Die \emph{Folge der Fibonacci-Zahlen} beginnt mit
 \]
 Für~$n \geq 1$ gilt also $f_{n+1} = f_n + f_{n-1}$. Der \emph{goldene Schnitt}
 ist die Zahl~$\Phi \defeq (1+\sqrt{5})/2$.
-
-\begin{center}\includegraphics[width=0.60\textwidth]{hafez-tomb}\end{center}
+\vspace{1em}
+\enlargethispage{0.5em}
 
 \begin{aufgabe}{Ein Kästchen verschwindet!}
 Die beiden Figuren bestehen offensichtlich aus denselben Stücken, haben
-aber unterschiedlichen Flächeninhalt! Was ist passiert?
+aber unterschiedlichen Flächeninhalt!
+\begin{enumerate}
+\item Was ist passiert?
+\item Was hat das mit Approximationen durch Kettenbrüche zu tun? Welche mit dem
+goldenen Schnitt sehr eng verwandte Zahl spielt hier eine Rolle?
+\end{enumerate}
 \begin{center}
-  \includegraphics[scale=0.3]{ein-kaestchen-verschwindet}
+  \includegraphics[scale=0.28]{ein-kaestchen-verschwindet}
 \end{center}
 \end{aufgabe}
 
@@ -174,10 +184,52 @@ folgende Gleichungen:
   r_1 &= a_3 \cdot r_2 + r_3 \\
   r_2 &= a_4 \cdot r_3 + r_4
 \end{align*}
-Und so weiter. Die Zahlen~$a_n$ und~$r_n$ sind also nichtnegative ganze Zahlen
+Und so weiter. Die Zahlen~$a_n$ sind also nichtnegative ganze Zahlen
 und die Reste~$r_n$ sind jeweils kleiner als der zweite Faktor des
 nebenstehenden Produkts. Zeige:
 \[ x = a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{\ddots}}}. \]
+\end{aufgabe}
+% muss vor nächster Aufgabe stehen
+
+% muss nach vorheriger Aufgabe stehen
+\enlargethispage{1.8em}
+\begin{aufgabe}{Die Entdeckung der Irrationalität}
+Als Entdecker der Irrationalität gilt der griechische Mathematiker Hippasos von
+Metapont. Er erkannte, dass der \emph{goldene Schnitt} irrational ist. Damit
+erschütterte er die Schule der Pythagoreer, denn diese waren von dem Kredo
+\emph{Alles ist Zahl} überzeugt, wobei sie mit "`Zahl"' \emph{rationale Zahl}
+meinten. Ironischerweise kam der goldene Schnitt auch noch im Erkennungszeichen
+der Pythagoreer vor, dem Pentagramm. In dieser Aufgabe möchten wir uns auf
+Metaponts Spuren begeben.
+\begin{enumerate}
+\item Sei~$x$ eine rationale Zahl. Zeige, dass die Anwendung des euklidischen
+Algorithmus auf~$x$ (wie in der vorherigen Aufgabe beschrieben)
+\emph{terminiert}, das heißt nach einer gewissen endlichen Anzahl von Schritten
+den Rest Null liefert.
+\item Folgere: Die Kettenbruchentwicklung einer rationalen Zahl ist stets
+endlich.
+\item Verwende folgende Figur, um rein geometrisch einzusehen, dass der
+euklidische Algorithmus beim goldenen Schnitt als Startwert \emph{nicht}
+terminiert. Somit ist der goldene Schnitt irrational.
+\item Halte die Augen offen, wann das Buch \emph{Sternstunden der Mathematik}
+von Jost-Hinrich Eschenburg erscheint, das diese Station der Geschichte und
+viele weitere genauer beleuchtet. Der Vorentwurf steht im Digicampus. Es
+wird ein rundum schönes Buch!
+\end{enumerate}
+\begin{center}
+\href{http://classicalastrologer.me/2013/01/13/venus-the-golden-mean-the-pentagram/}{\includegraphics[width=0.4\textwidth]{pentagramm-irrational}}
+\end{center}
+\end{aufgabe}
+
+\begin{aufgabe}{Zahlentheoretische Irrationalitätsbeweise}
+\begin{enumerate}
+\item Zeige, dass~$\sqrt{2}$ irrational ist, in dem du die Annahme, es gäbe
+ganze Zahlen~$a$ und~$b$ mit~$\sqrt{2} = a/b$, zu einem Widerspruch führst.
+Bonuspunkte gibt es, wenn du in deinem Beweis nicht ohne Beschränkung der
+Allgemeinheit voraussetzen muss, dass der Bruch~$a/b$ vollständig gekürzt ist.
+\item Zeige nach demselben Muster, dass~$\Phi$ irrational ist. Nutze die
+Identität~$\Phi = 1 + 1/\Phi$.
+\end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe*}{Rekursionsformel für die Kettenbruchapproximationen}\label{rec}
@@ -308,6 +360,30 @@ Zahlentheorie verwendet. Dort gibt es beispielsweise folgendes mächtiges
 "`lokal-zu-global"' Prinzip: Eine Gleichung einer bestimmten Art hat genau dann
 eine Lösung in~$\mathbb{Z}$, wenn sie eine Lösung in~$\mathbb{R}$ und jeweils
 eine Lösung in allen~$p$-adischen Zahlen hat.\par}
+\end{aufgabe}
+
+\begin{aufgabe}{Pi auswendig lernen}
+Die Nachkommaziffern von Pi sind nichts Kanonisches: Sie hängen von der
+unkanonischen Wahl der Basis Zehn unseres Stellenwertsystems ab. Besser ist,
+die Kettenbruchentwicklung von~Pi auswendig zu lernen. Sofern man die
+Koeffizienten als Abstrakta begreift, ist das kanonisch. Die ersten
+Koeffizienten lauten:
+
+\scriptsize
+3 7 15 1 292 1 1 1 2 1 3 1 14 2 1 1 2 2 2 2 1 84 2 1
+1 15 3 13 1 4 2 6 6 99 1 2 2 6 3 5 1 1 6 8 1 7 1 2
+3 7 1 2 1 1 12 1 1 1 3 1 1 8 1 1 2 1 6 1 1 5 2 2 3
+1 2 4 4 16 1 161 45 1 22 1 2 2 1 4 1 2 24 1 2 1 3 1
+2 1 1 10 2 5 4 1 2 2 8 1 5 2 2 26 1 4 1 1 8 2 42 2
+1 7 3 3 1 1 7 2 4 9 7 2 3 1 57 1 18 1 9 19 1 2 18 1
+3 7 30 1 1 1 3 3 3 1 2 8 1 1 2 1 15 1 2 13 1 2 1 4
+1 12 1 1 3 3 28 1 10 3 2 20 1 1 1 1 4 1 1 1 5 3 2 1
+6 1 4 1 120 2 1 1 3 1 23 1 15 1 3 7 1 16 1 2 1 21 2
+1 1 2 9 1 6 4 127 14 5 1 3 13 7 9 1 1 1 1 1 5 4 1 1
+3 1 1 29 3 1 1 2 2 1 3 1 1 1 3 1 1 10 3 1 3 1 2 1
+12 1 4 1 1 1 1 7 1 1 2 1 11\par
+% http://www.plouffe.fr/simon/constants/CFPiTerms20aa.txt
+
 \end{aufgabe}
 
 \end{document}
