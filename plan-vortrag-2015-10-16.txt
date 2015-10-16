@@ -16,10 +16,6 @@
 * Schokoladenrätsel
 * Dame/Halma?
 
-Siehe auch:
-http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibnat2.html
-https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
-
 
 === Pi
 
@@ -39,4 +35,24 @@ https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
 http://www.heartstarbooks.com/wp-content/uploads/2014/03/21253165_l.jpg
 https://www.flickr.com/photos/lucapost/694780262
 https://commons.wikimedia.org/wiki/File:Yellow_sunflower_001.JPG
+
+
+=== Siehe auch
+
+Eine ganz tolle Quelle für Kettenbrüche:
+http://www.math.brown.edu/~jhs/frintonlinechapters.pdf
+
+Auch gut:
+http://www.math.jacobs-university.de/timorin/PM/continued_fractions.pdf
+http://www.millersville.edu/~bikenaga/number-theory/approximation-by-rationals/approximation-by-rationals.html
+
+Fibonacci-Zahlen in der Natur:
 http://www.math.uni-hamburg.de/home/werner/Absolventenfeier2.06.Vortrag.pdf
+http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibnat2.html
+https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
+
+Vi Hart zur Ananas von Spongebob:
+https://www.youtube.com/watch?v=gBxeju8dMho
+
+Programm, um interaktiv das Apfelmännchen und andere Fraktale zu erkunden:
+http://matek.hu/xaos/doku.php?id=downloads:main
