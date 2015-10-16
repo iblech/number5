@@ -65,7 +65,8 @@ Die \emph{Folge der Fibonacci-Zahlen} beginnt mit
 \]
 Für~$n \geq 1$ gilt also $f_{n+1} = f_n + f_{n-1}$. Der \emph{goldene Schnitt}
 ist die Zahl~$\Phi \defeq (1+\sqrt{5})/2$.
-\vspace{1em}
+
+\begin{center}\includegraphics[width=0.60\textwidth]{hafez-tomb}\end{center}
 
 \begin{aufgabe}{Ein Kästchen verschwindet!}
 Die beiden Figuren bestehen offensichtlich aus denselben Stücken, haben
@@ -108,7 +109,7 @@ berechnet?
 Im Pascalschen Dreieck verbergen sich die Fibonacci-Zahlen wie angedeutet.
 Beweise das!
 \begin{center}
-\includegraphics[scale=0.5]{pascal-fibonacci}
+\includegraphics[scale=0.3]{pascal-fibonacci}
 \end{center}
 \end{aufgabe}
 
@@ -151,6 +152,18 @@ Ableitung gleich ihrer Umkehrfunktion ist.
 \emph{Tipp:} Versuche es mit dem Ansatz~$x \mapsto x^a$.
 \end{aufgabe}
 
+\begin{aufgabe}{Beispiele für Kettenbruchentwicklungen}
+\begin{enumerate}
+\item Bestätige, dass~$\sqrt{2} = [1; 2, 2, \ldots]$.
+\item Bestätige, dass~$\sqrt{3} = [1; 1, 2, 1, 2, 1, 2, \ldots]$.
+\item Was ist die Kettenbruchentwicklung von~$\sqrt{5}$?
+\item Mach dir nur klar: Jede reelle Zahl ist Lösung irgendeiner quadratischen
+Gleichung.
+\item Zeige: Jede Zahl mit periodischer Kettenbruchentwicklung ist Lösung einer
+gewissen quadratischen Gleichung \emph{mit rationalen Koeffizienten}.
+\end{enumerate}
+\end{aufgabe}
+
 \begin{aufgabe}{Kettenbruckentwicklung durch den euklidischen Algorithmus}
 Sei~$x$ eine nichtnegative reelle Zahl. Der euklidische Algorithmus produziere
 folgende Gleichungen:
@@ -165,18 +178,6 @@ Und so weiter. Die Zahlen~$a_n$ und~$r_n$ sind also nichtnegative ganze Zahlen
 und die Reste~$r_n$ sind jeweils kleiner als der zweite Faktor des
 nebenstehenden Produkts. Zeige:
 \[ x = a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{\ddots}}}. \]
-\end{aufgabe}
-
-\begin{aufgabe}{Beispiele für Kettenbruchentwicklungen}
-\begin{enumerate}
-\item Bestätige, dass~$\sqrt{2} = [1; 2, 2, \ldots]$.
-\item Bestätige, dass~$\sqrt{3} = [1; 1, 2, 1, 2, 1, 2, \ldots]$.
-\item Was ist die Kettenbruchentwicklung von~$\sqrt{5}$?
-\item Mach dir nur klar: Jede reelle Zahl ist Lösung irgendeiner quadratischen
-Gleichung.
-\item Zeige: Jede Zahl mit periodischer Kettenbruchentwicklung ist Lösung einer
-gewissen quadratischen Gleichung \emph{mit rationalen Koeffizienten}.
-\end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe*}{Rekursionsformel für die Kettenbruchapproximationen}\label{rec}
@@ -202,9 +203,6 @@ Stelle~$n$ ergibt, ist~$A_n/B_n$.
 zentrale Einsicht, dass der Kettenbruch~$[c_0;c_1,\ldots,c_n,c_{n+1}]$ gleich
 dem um ein Glied kürzeren Kettenbruch~$[c_0;c_1,\ldots,c_n+1/c_{n+1}]$ ist.
 \end{aufgabe*}
-
-\vfill
-\begin{center}\includegraphics[width=0.60\textwidth]{hafez-tomb}\end{center}
 
 \begin{aufgabe}{Unkürzbarkeit der Kettenbruchapproximationen}
 Wie in Aufgabe~\ref{rec} schreiben wir~"`$A_n/B_n$"' für den Bruch, der sich
@@ -245,9 +243,6 @@ Ursprungsstein ist. Details findest du im Internet.
 \end{enumerate}
 \end{aufgabe*}
 
-\vfill
-\begin{center}\includegraphics[width=0.45\textwidth]{sonnenblume}\end{center}
-
 \begin{aufgabe*}{Verschoben aufsummierte Fibonacci-Zahlen}
 In dieser Aufgabe betrachten wir die "`verschoben aufgeschriebenen"'
 Fibonacci-Zahlen:
@@ -279,10 +274,7 @@ Es gilt:
 \end{enumerate}
 \end{aufgabe*}
 
-\vfill
-\begin{center}\includegraphics[width=0.73\textwidth]{goldene-spirale-8}\end{center}
-
-\begin{aufgabe}{Spiel und Spaß mit 10-adischen Zahlen}
+\begin{aufgabe}{Spiel und Spaß mit den 10-adischen Zahlen}
 Bei den gewöhnlichen reellen Zahlen stehen in ihrer Dezimalschreibweise vor dem
 Komma nur endlich viele Ziffern, hinter dem Komma aber gelegentlich unendlich
 viele Ziffern. Bei den~$10$-adischen Zahlen ist es genau umgekehrt: Vor dem
