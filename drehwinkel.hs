@@ -6,8 +6,8 @@ import Text.Printf
 
 main = do
     [phi] <- liftM (map read) getArgs
-    forM_ [0::Double,phi..] $ \n -> do
-        let r = n / phi
+    forM_ [(0::Double)..] $ \n -> do
+        let r = n
         let x = r * cos (n*2*pi*phi)
         let y = r * sin (n*2*pi*phi)
         printf "%f\t%f\n" x y
