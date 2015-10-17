@@ -24,11 +24,11 @@
 \setlength{\aufgabenskip}{1.4em}
 \newcounter{aufgabennummer}
 \newenvironment{aufgabe}[1]{
-  \addtocounter{aufgabennummer}{1}
+  \refstepcounter{aufgabennummer}
   \textbf{Aufgabe \theaufgabennummer.} \emph{#1} \par
 }{\vspace{\aufgabenskip}}
 \newenvironment{aufgabe*}[1]{
-  \addtocounter{aufgabennummer}{1}
+  \refstepcounter{aufgabennummer}
   \textbf{Aufgabe* \theaufgabennummer.} \emph{#1} \par
 }{\vspace{\aufgabenskip}}
 \newenvironment{aufgabeE}[1]{\begin{aufgabe}{#1}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
@@ -226,7 +226,7 @@ wird ein rundum schönes Buch!
 \item Zeige, dass~$\sqrt{2}$ irrational ist, in dem du die Annahme, es gäbe
 ganze Zahlen~$a$ und~$b$ mit~$\sqrt{2} = a/b$, zu einem Widerspruch führst.
 Bonuspunkte gibt es, wenn du in deinem Beweis nicht ohne Beschränkung der
-Allgemeinheit voraussetzen muss, dass der Bruch~$a/b$ vollständig gekürzt ist.
+Allgemeinheit voraussetzen musst, dass der Bruch~$a/b$ vollständig gekürzt ist.
 \item Zeige nach demselben Muster, dass~$\Phi$ irrational ist. Nutze die
 Identität~$\Phi = 1 + 1/\Phi$.
 \end{enumerate}
@@ -241,7 +241,7 @@ gegeben. Wenn man diesen sukzessive abschneidet, erhält man die Approximationen
   c_0 + \dfrac{1}{c_1 + \dfrac{1}{c_2}} = \frac{c_0c_1c_2 + c_0 +
   c_2}{c_1c_2+1}
 \]
-und so weiter. Wir definieren induktiv Folgen~$A_{-1},A_0,\ldots$
+und so weiter. Wir definieren rekursiv Folgen~$A_{-1},A_0,\ldots$
 und~$B_{-1},B_0,\ldots$:
 \begin{align*}
   A_{-1} &= 1 & B_{-1} &= 0 \\
@@ -343,7 +343,7 @@ $\ldots 13562 + \ldots 90081 = \ldots 03643$.
 \item Überlege dir (oder schlage nach), wie in den 10-adischen Zahlen die
 Division funktioniert. Die Division durch 3, 7, 9 und alle weiteren zu~10
 teilerfremden ganzen Zahlen geht übrigens \emph{stets ohne Komma auf}.
-\item Gibt es in den~$10$-adischen Zahlen einer Zahl~$x$ mit der
+\item Gibt es in den~$10$-adischen Zahlen eine Zahl~$x$ mit der
 Eigenschaft~$x = 1 + 1/x$, oder äquivalent~$x^2 = x + 1$?
 \item Wie sieht es in den~$11$-adischen Zahlen aus? (Schwer ohne umfangreiche
 Tipps.)
