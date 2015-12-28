@@ -1,7 +1,7 @@
-\documentclass[a4paper,ngerman,twoside]{scrartcl}
+\documentclass[a4paper,english,twoside]{scrartcl}
 
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath,amsthm,amssymb,amscd,color,graphicx,environ,mathtools}
 \usepackage{framed}
 \usepackage[protrusion=true,expansion=true]{microtype}
@@ -25,11 +25,11 @@
 \newcounter{aufgabennummer}
 \newenvironment{aufgabe}[1]{
   \refstepcounter{aufgabennummer}
-  \textbf{Aufgabe \theaufgabennummer.} \emph{#1} \par
+  \textbf{Exercise \theaufgabennummer.} \emph{#1} \par
 }{\vspace{\aufgabenskip}}
 \newenvironment{aufgabe*}[1]{
   \refstepcounter{aufgabennummer}
-  \textbf{Aufgabe* \theaufgabennummer.} \emph{#1} \par
+  \textbf{Exercise* \theaufgabennummer.} \emph{#1} \par
 }{\vspace{\aufgabenskip}}
 \newenvironment{aufgabeE}[1]{\begin{aufgabe}{#1}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
 
@@ -49,17 +49,17 @@ Universität Augsburg \\
 Ingo Blechschmidt
 
 \begin{center}
-  \textbf{Pizzaseminar in Mathematik} \\
-  \emph{Das Geheimnis der Zahl 5}
+  \textbf{Pizza seminar in mathematics} \\
+  \emph{The secret of the number 5}
 \end{center}
 \vspace{0.5em}
 
 \begin{center}\href{https://commons.wikimedia.org/wiki/File:Roof_hafez_tomb.jpg}{\includegraphics[width=0.60\textwidth]{hafez-tomb}} \\
-\scriptsize Grab des Hafis in Shiras (Iran); Foto von Pentocelo (CC-lizensiert)\par
+\scriptsize Tomb of Hafez (Iran); photo by Pentocelo (CC-licensed)\par
 \end{center}
 \vspace{0.5em}
 
-Die \emph{Folge der Fibonacci-Zahlen} beginnt mit
+The \emph{sequence of Fibonacci numbers} begins with
 \[
   f_0 \defeq 1, \quad
   f_1 \defeq 1, \quad
@@ -68,74 +68,71 @@ Die \emph{Folge der Fibonacci-Zahlen} beginnt mit
   f_4 \defeq 5, \quad
   f_5 \defeq 8.
 \]
-Für~$n \geq 1$ gilt also $f_{n+1} = f_n + f_{n-1}$. Der \emph{goldene Schnitt}
-ist die Zahl~$\Phi \defeq (1+\sqrt{5})/2$.
+So for~$n \geq 1$ it holds that $f_{n+1} = f_n + f_{n-1}$. The \emph{golden ratio}
+is the number~$\Phi \defeq (1+\sqrt{5})/2$.
 \vspace{1em}
 \enlargethispage{0.5em}
 
-\begin{aufgabe}{Ein Kästchen verschwindet!}
-Die beiden Figuren bestehen offensichtlich aus denselben Stücken, haben
-aber unterschiedlichen Flächeninhalt!
+\begin{aufgabe}{One box disappears!}
+The two figures below are obviously made up from the same pieces. But they
+have different area!
 \begin{enumerate}
-\item Was ist passiert?
-\item Was hat das mit Approximationen durch Kettenbrüche zu tun? Welche mit dem
-goldenen Schnitt sehr eng verwandte Zahl spielt hier eine Rolle?
+\item What happened?
+\item What's the relation with approximation by truncated continued fractions?
+Which number (which is very much related to the golden ratio) is relevant?
 \end{enumerate}
 \begin{center}
-  \includegraphics[scale=0.28]{ein-kaestchen-verschwindet}
+  \includegraphics[scale=0.25]{ein-kaestchen-verschwindet}
 \end{center}
 \end{aufgabe}
 
-\begin{aufgabe}{Die Quadrate der Fibonacci-Zahlen}
-Es gilt die Identität~$f_0^2 + f_1^2 + \cdots + f_n^2 = f_n f_{n+1}$.
+\begin{aufgabe}{Squares of Fibonacci numbers}
+There is the identity~$f_0^2 + f_1^2 + \cdots + f_n^2 = f_n f_{n+1}$.
 \begin{enumerate}
-\item Führe einen Induktionsbeweis.
-\item Argumentiere, wieso folgende Skizze die Behauptung auch schon beweist.
+\item Proof this by induction.
+\item Argue that the following sketch also proves the assertion.
 \end{enumerate}
 \begin{center}
   \includegraphics[scale=0.3]{fibonacci-quadrate}
 \end{center}
 \end{aufgabe}
 
-\begin{aufgabe}{Von Fibonacci-Zahlen und Rechtecken}
-Gegeben sei eine Reihe von~$n$ Quadraten, die ein~$(1 \times n)$-Rechteck
-bilden. Wir möchten dieses Rechteck mit Monominos, also
-$(1 \times 1)$-Rechtecken, sowie Dominos, $(1\times 2)$-Rechtecken, überdecken.
+\begin{aufgabe}{About Fibonacci numbers and rectangles}
+Let a row of~$n$ squares be given, forming a~$(1 \times n)$-rectangle. We want
+to cover this rectangle by minominos, that is~$(1 \times 1)$-rectangles, and by
+dominos, that is~$(1 \times 2)$-rectangles.
 
-Zeige, dass die Anzahl von möglichen Überdeckungen des $(1 \times n)$-Rechtecks
-mittels Monominos und Dominos gleich~$f_n$ ist.
+Show that the number of possible such coverings is~$f_n$.
 \end{aufgabe}
 % \url{https://www.math.hmc.edu/~benjamin/papers/DIE.pdf}
 
-\begin{aufgabe}{Ein naiver Algorithmus für Fibonacci-Zahlen}
-Eine ganz naive Methode, die~$n$-te Fibonacci-Zahl zu bestimmen, besteht
-darin, die beiden Vorgänger zu bestimmen und dann zu summieren. Wie viele
-Rechenschritte sind dabei notwendig, wenn man sich
-Zwischenergebnisse \emph{nicht} merkt und daher viele Fibonacci-Zahlen immer wieder
-berechnet? Wieso ist die Lösung dieser Aufgabe lustig?
+\begin{aufgabe}{A very naive algorithm for computing Fibonacci numbers}
+A very naive method for calculating the~$n$-th Fibonacci number is to calculate
+its two predecessors and then sum them. How many computational steps are
+necessary if you \emph{don't} store intermediate results and therefore
+recalculate lots of numbers? Why is the result of this exercise funny?
 \end{aufgabe}
 
 \begin{aufgabe}{Fibonacci-Zahlen im Pascalschen Dreieck}
-Im Pascalschen Dreieck verbergen sich die Fibonacci-Zahlen wie angedeutet.
-Beweise das!
+The Fibonacci numbers show up in Pascal's triangle. Prove that.
 \begin{center}
 \includegraphics[scale=0.3]{pascal-fibonacci}
 \end{center}
 \end{aufgabe}
 
-\begin{aufgabe}{Ein Lemma über goldene Dreiecke}
+\begin{aufgabe}{A lemma about golden triangles}
 \begin{enumerate}
-\item Zeige: In einem gleichschenkligen Dreieck mit den
-Innenwinkeln~$72^\circ$, $36^\circ$ und~$72^\circ$ teilen die langen Seiten die
-Grundseite im goldenen Schnitt.
-\item Beweise damit folgende Pentagon-Dekagon-Hexagon-Identität: Seien ein
-reguläres Pentagon, ein reguläres Dekagon und ein reguläres Hexagon in einem
-Kreis einbeschrieben. Dann gilt für die Kantenlängen~$P$,~$D$ bzw.~$H$ die
-Identität $P^2 = D^2 + H^2$.
+\item Show: In an isosceles triangle with internal angles~$72^\circ$,
+$36^\circ$, and~$72^\circ$ the two long sides divide the base in the golden
+ratio.
+\item Prove the following pentagon-decagon-hexagon identity: Let a regular
+pentagon, a regular decagon, and a regular hexagon be inscribed in a circle.
+Then for the side lengths~$P$,~$D$, and~$H$ the identity~$P^2 = D^2 + H^2$
+holds.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Ikosaeder und Dodekaeder}
+\begin{aufgabe}{Icosahedron and dodecahedron}
 Sei einem regelmäßigen Ikosaeder ein regelmäßiges Dodekaeder einbeschrieben
 (Seitenflächenmittelpunkte auf Ecken). Zeige, dass das Verhältnis der Kantenlängen
 beider Objekte gleich $3:\Phi$ ist.
