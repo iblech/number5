@@ -8,6 +8,8 @@
 \usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{mathtools}
+\usepackage[cmtip,all]{xy}
+\newcommand{\longsquiggly}{\xymatrix{{}\ar@{~>}[r]&{}}}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
 \definecolor{darkred}{RGB}{220,0,0}
@@ -67,6 +69,7 @@
 \newcommand{\icfrac}[4]{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \dfrac{1}{#4 + \ddots}}}}
 \newcommand{\icfracc}[3]{\dfrac{1}{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \ddots}}}}
 \newcommand{\icfraccc}[2]{\dfrac{1}{#1 + \dfrac{1}{#2 + \ddots}}}
+\newcommand{\icfracccc}[5]{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \dfrac{1}{#4 + \dfrac{1}{#5 + \ddots}}}}}
 
 % Gonzalo Medina, http://tex.stackexchange.com/a/228198
 \makeatletter
@@ -102,7 +105,7 @@
   \vspace*{-2em}
   \begin{center}
     \small
-    \emph{Watch this space for details on the talk.}
+    \emph{Dedicated to Prof. Dr. Jost-Hinrich Eschenburg.}
     \medskip
 
     \includegraphics[height=0.25\textheight]{sonnenblume}\quad
@@ -111,13 +114,16 @@
   \end{center}
 }
 
+\begin{frame}\frametitle{Outline}\tableofcontents\end{frame}
+
 % http://joachim-reichel.org/software/fraktal/mandelbrot_large.png
+
 
 \section{A design pattern in nature}
 
 \begin{frame}\frametitle{A design pattern in nature}
   \begin{center}
-    \includegraphics[height=0.8\textheight]{mat/21253165_l}
+    \includegraphics[height=0.8\textheight]{sonnenblume2}
     % 34 counterclockwise, 21 clockwise
 
     %\includegraphics[height=0.8\textheight]{mat/blume}
@@ -181,28 +187,144 @@
   \end{enumerate}
 \end{frame}
 
+
+\subsection{Calculating the continued fraction expansion}
+
 \begin{frame}\frametitle{The Euclidean algorithm}
-  Recall $\sqrt{2} = [1; 2, 2, 2, \ldots] = 1{,}41421356\ldots$
+  Recall $\sqrt{2} = [1; 2, 2, 2, \ldots] = 1.41421356\ldots$
   \begin{align*}
-    1{,}41421356\ldots &= 1 \cdot 1{,}00000000\ldots + 0{,}41421356\ldots \\
-    1{,}00000000\ldots &= 2 \cdot 0{,}41421356\ldots + 0{,}17157287\ldots \\
-    0{,}41421356\ldots &= 2 \cdot 0{,}17157287\ldots + 0{,}07106781\ldots \\
-    0{,}17157287\ldots &= 2 \cdot 0{,}07106781\ldots + 0{,}02943725\ldots \\
-    0{,}07106781\ldots &= 2 \cdot 0{,}02943725\ldots + 0{,}01219330\ldots \\
-    0{,}02943725\ldots &= 2 \cdot 0{,}01219330\ldots + 0{,}00505063\ldots \\
+    1.41421356\ldots &= 1 \cdot 1.00000000\ldots + .41421356\ldots \\
+    1.00000000\ldots &= 2 \cdot 0.41421356\ldots + 0.17157287\ldots \\
+    0.41421356\ldots &= 2 \cdot 0.17157287\ldots + 0.07106781\ldots \\
+    0.17157287\ldots &= 2 \cdot 0.07106781\ldots + 0.02943725\ldots \\
+    0.07106781\ldots &= 2 \cdot 0.02943725\ldots + 0.01219330\ldots \\
+    0.02943725\ldots &= 2 \cdot 0.01219330\ldots + 0.00505063\ldots \\
     &\,\,\,\vdots
   \end{align*}
 \end{frame}
 
+\note{\justifying
+  Why does the Euclidean algorithm give the continued fraction coefficients?
+  Let's write
+  \begin{align*}
+    x   &= a_0 \cdot \sbox0{$r_0$}\makebox[\wd0][l]{$1$} + r_0 \\
+    1   &= a_1 \cdot r_0 + r_1 \\
+    r_0 &= a_2 \cdot r_1 + r_2 \\
+    r_1 &= a_3 \cdot r_2 + r_3
+  \end{align*}
+  and so on, where the numbers~$a_n$ are natural numbers and the residues~$r_n$
+  are smaller than the second factor of the respective adjacent product. Then:
+  \begin{align*}
+    x &= a_0 + r_0 = a_0 + 1/(1/r_0) \\
+      &= a_0 + 1/(a_1 + r_1/r_0) = a_0 + 1/(a_1 + 1/(r_0/r_1)) \\
+      &= a_0 + 1/(a_1 + 1/(a_2 + r_2/r_1)) = \cdots
+  \end{align*}
+}
+
+\note{\justifying
+  In the beautiful language Haskell, the code for lazily calculating the
+  infinite continued fraction expansion is only one line long (the type
+  declaration is optional).
+  \medskip
+
+  {\scriptsize\texttt{cf :: Double -> [Integer]}\\
+  \texttt{cf x = a : cf (1 / (x - fromIntegral a)) where a = floor x}\par}
+  \medskip
+
+  So the continued fraction expansion of a number~$x$ begins
+  with~$a$, the integral part of~$x$, and continues with the
+  continued fraction expansion of~$1 / (x-a)$.
+  \medskip
+
+  Note that because of floating-point inaccuracies, only the first few terms of
+  the expansion are reliable. For instance,~\texttt{cf (sqrt 6)} could yield
+  \texttt{[2,2,4,2,4,2,4,2,4,2,4,2,4,2,4,2,2,1,48,2,4,6,1,\ldots]}.
+}
+
+
+\subsection{Best approximations using continued fractions}
+
 \begin{frame}\frametitle{Best approximations using continued fractions}
-  \textbf{Theorem.} Cutting off the infinite fraction expansion of a number~$x$
+  \begin{theorem}
+  Cutting off the infinite fraction expansion of a number~$x$
   yields a fraction $a/b$ which is closest to~$x$ under all fractions with
   denominator~$\leq b$.
+  \end{theorem}
+  \[
+    \sqrt{2} = \icfrac{1}{2}{2}{2} \longsquiggly
+    1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2}}} = \frac{17}{12} \approx 1.42
+  \]
   \medskip
   \pause
 
-  \textbf{Bonus.} The approximation~$a/b$ is % XXX umso
-  better % XXX je größer der nächste Koeffizient in der Entwicklung ist.
+  \textbf{Bonus.} The bigger the coefficient after the cut-off is, the better
+  is the approximation~$a/b$.
+\end{frame}
+
+\note{\justifying
+  More precisely, the bonus statement is that the distance from~$x$ to~$a/b$ is
+  less than~$1 / (a_n a_{n+1})$, where~$a_n$ is the last coefficient to be
+  included in the cut-off and~$a_{n+1}$ is the first coefficient after the
+  cut-off.
+  \par
+}
+
+
+\section{\texorpdfstring{Approximations of $\pi$}{Approximations of π}}
+
+\begin{frame}\frametitle{Approximations of $\pi$}
+  \[ \pi = 3.1415926535\ldots = \icfracccc{3}{7}{15}{1}{292} \]
+
+  \begin{enumerate}
+    \item $3$
+    \item $[3;7]\phantom{,15,1} = \phantom{0}22/7\phantom{00} = \underline{3.14}28571428\ldots$
+    \item $[3;7,15]\phantom{,1} = 333/106 = \underline{3.1415}094339\ldots$
+    \item $[3;7,15,1] = 355/113 = \underline{3.141592}9203\ldots$
+  \end{enumerate}
+\end{frame}
+
+
+\section{The Mandelbrot fractal}
+
+\begin{frame}\frametitle{The Mandelbrot fractal}
+  \centering
+  \includegraphics[width=0.8\textwidth]{mandelbrot}
+  \medskip
+  \pause
+
+  The Fibonacci numbers show up in the Mandelbrot fractal.
+  \par
+\end{frame}
+
+\note{\justifying
+  See \url{http://math.bu.edu/DYSYS/FRACGEOM2/node7.html} for an explanation of
+  why the Fibonacci numbers show up in the Mandelbrot fractal.\par
+}
+
+
+\section{Spirals in nature}
+
+\begin{frame}\frametitle{Spirals in nature}
+  \centering
+  \includegraphics[height=0.8\textheight]{sonnenblume2}
+  \par
+\end{frame}
+
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-3_14159265358979323846.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-3_14159265358979323846.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-1_61803398874989484820.pdf}\par}
+
+
+\section{The ananas from SpongeBob SquarePants}
+
+\begin{frame}\frametitle{The ananas from SpongeBob SquarePants}
+  \centering
+  \includegraphics[width=0.65\textwidth]{spongebob-ananas}
+  \medskip
+
+  By Vi Hart, recreational mathemusician.
+  \par
 \end{frame}
 
 
