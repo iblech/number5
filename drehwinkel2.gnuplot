@@ -4,6 +4,12 @@ unset border
 
 set terminal pdf size 12cm, 12cm
 
+set output "drehwinkel-200-0_25.pdf"
+plot "<./drehwinkel 0.25 | head -n 200" t "0.25 (200 points)" ps 1 pt 5
+
+set output "drehwinkel-200-0_125.pdf"
+plot "<./drehwinkel 0.125 | head -n 200" t "0.125 (200 points)" ps 1 pt 5
+
 set output "drehwinkel-200-3_14159265358979323846.pdf"
 plot "<./drehwinkel 3.14159265358979323846 | head -n 200" t "3.14159265358979323846 (200 points)" ps 1 pt 5
 

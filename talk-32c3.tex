@@ -139,6 +139,11 @@
   \end{center}
 \end{frame}
 
+\note{\justifying
+  The number of spirals on a sunflower is always a Fibonacci number (or a
+  number very close to a Fibonacci number). Why?
+}
+
 
 \section{Continued fractions}
 
@@ -196,6 +201,12 @@
     \item $\sbox0{$\sqrt{10}$}\makebox[\wd0][l]{$e$} = [2; 1, 2, 1, 1, 4, 1, 1, 6, \ldots]$
   \end{enumerate}
 \end{frame}
+
+\note{\justifying
+  The digits of the number~$e = 2.7182818284\ldots$, the basis of the natural
+  logarithm, do not have any concernible pattern. But its continued fraction
+  expansion is completely regular.\par
+}
 
 
 \subsection{Calculating the continued fraction expansion}
@@ -284,7 +295,7 @@
 
 \begin{frame}[plain,c]
   \centering\Huge
-  \scalebox{2.8}{\hil{Love is}}
+  \scalebox{2.8}{\hil{Love is}} \\[0.6em]
   \scalebox{2.8}{\hil{important.}}
 
   \bigskip
@@ -296,7 +307,7 @@
 
 \begin{frame}[plain,c]
   \centering\Huge
-  \scalebox{2.8}{\hil{Pi is}}
+  \scalebox{2.8}{\hil{Pi is}} \\[0.6em]
   \scalebox{2.8}{\hil{important.}}
 
   \bigskip
@@ -317,6 +328,26 @@
   \end{enumerate}
 \end{frame}
 
+\note{\justifying
+  We do not know for sure how people in ancient times calculated approximations
+  to~$\pi$. But one possibility is that they used some form of the Euclidean
+  algorithm (of course not using decimal expansions, but for instance strings
+  of various lengths).
+  \medskip
+
+  Because the coefficient~$292$ appearing in the continued fraction expansion
+  of~$\pi$ is exceptionally large, the approximation~$355/113$ is exceptionally
+  good. That's a nice mathematical accident! I like to think that better
+  approximations were not physically obtainable in ancient times, but thanks to
+  this accident the best approximation that was obtainable was in fact an
+  extremely good one. In particular, it's much better than the
+  denominator~$113$ might want us to think.
+  \medskip
+
+  NB: The fraction~$355/113$ is easily memorized ($11$, $33$, $55$).
+  \par
+}
+
 
 \section{The Mandelbrot fractal}
 
@@ -332,7 +363,7 @@
 
 \note{\justifying
   See \url{http://math.bu.edu/DYSYS/FRACGEOM2/node7.html} for an explanation of
-  why the Fibonacci numbers show up in the Mandelbrot fractal.\par
+  where and why the Fibonacci numbers show up in the Mandelbrot fractal.\par
 }
 
 
@@ -344,6 +375,8 @@
   \par
 \end{frame}
 
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_25.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_125.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-3_14159265358979323846.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-3_14159265358979323846.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
@@ -358,7 +391,7 @@
   Rather, it is the \hil{golden angle} $\Phi \cdot 360^\circ =
   582^\circ$ (equivalently $222^\circ$), where~$\Phi$ is the \hil{golden
   ratio}:
-  $\Phi = \frac{1 + \sqrt{5}}{2}$.
+  $\Phi = \frac{1 + \sqrt{5}}{2} = 1.6180339887\ldots$
 
   \begin{center}
     \includegraphics[width=0.7\textwidth]{golden-ratio}
@@ -369,6 +402,21 @@
   \medskip
   \textbf{Proof.} $\Phi = \icfrac{1}{1}{1}{1}.$
 \end{frame}
+
+\note{\justifying
+  The golden ratio appears in lots of places in nature and art. If you divide a
+  segment in the golden ratio, the longer subsegment will be~$\Phi$ times as
+  long as the shorter subsegment; more conceptually:
+  \footnotesize
+  \[ \text{total segment} : \text{longer subsegment} =
+    \text{longer subsegment} : \text{shorter subsegment}. \]
+
+  Recall that a number can the better be approximated by fractions the larger
+  the coefficients in the continued fraction expansion are. With~$\Phi$, the
+  coefficients are as small as possible. This is the reason why~$\Phi$ is the
+  ``most irrational'' number. It is the hardest number to approximate by
+  fractions.\par
+}
 
 \begin{frame}\frametitle{Why the Fibonacci numbers?}
   \vspace*{-1em}
@@ -388,9 +436,9 @@
 \end{frame}
 
 
-\section{The ananas from SpongeBob SquarePants}
+\section{The pineapple from SpongeBob SquarePants}
 
-\begin{frame}\frametitle{The ananas from SpongeBob SquarePants}
+\begin{frame}\frametitle{The pineapple from SpongeBob SquarePants}
   \centering
   \includegraphics[width=0.65\textwidth]{spongebob-ananas}
   \medskip
@@ -398,6 +446,12 @@
   By Vi Hart, recreational mathemusician.
   \par
 \end{frame}
+
+\note{\justifying
+  Watch
+  \emph{Open Letter to Nickelodeon, Re: SpongeBob's Pineapple under the Sea} by
+  Vi Hart on YouTube.\par
+}
 
 
 \end{document}
