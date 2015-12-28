@@ -29,7 +29,7 @@
 
 \usetheme{Warsaw}
 \usecolortheme{seahorse}
-\definecolor{mypurple}{RGB}{60,0,255}
+\definecolor{mypurple}{RGB}{150,0,255}
 \setbeamercolor{structure}{fg=mypurple}
 \usefonttheme{serif}
 \usepackage[T1]{fontenc}
@@ -123,10 +123,19 @@
 
 \begin{frame}\frametitle{A design pattern in nature}
   \begin{center}
-    \includegraphics[height=0.8\textheight]{sonnenblume2}
+    \includegraphics[height=0.6\textheight]{sonnenblume2}
+    \bigskip
     % 34 counterclockwise, 21 clockwise
 
-    %\includegraphics[height=0.8\textheight]{mat/blume}
+    \only<1>{
+      \includegraphics[height=0.2\textheight]{blume}\qquad
+      \includegraphics[height=0.2\textheight]{zapfen}\qquad
+      \includegraphics[height=0.2\textheight]{Bellis_perennis_white_(aka)}
+    }
+    \only<2>{
+      \hil{Fibonacci numbers:} \\
+      1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots
+    }
   \end{center}
 \end{frame}
 
@@ -179,11 +188,12 @@
   \pause
 
   \begin{enumerate}
-    \item $\phantom{0}\sqrt{2} = [1; 2, 2, 2, 2, 2, 2, \ldots]$
-    \item $\phantom{0}\sqrt{5} = [2; 4, 4, 4, 4, 4, 4, \ldots]$
-    \item $\sqrt{10} = [3; 6, 6, 6, 6, 6, 6, \ldots]$
-    \item $\phantom{0}\sqrt{6} = [2; 2, 4, 2, 4, 2, 4, \ldots]$
-    \item $\sqrt{14} = [3; 1, 2, 1, 6, 1, 2, \ldots]$
+    \item $\phantom{0}\sqrt{2} = [1; 2, 2, 2, 2, 2, 2, 2, 2, \ldots]$
+    \item $\phantom{0}\sqrt{5} = [2; 4, 4, 4, 4, 4, 4, 4, 4, \ldots]$
+    \item $\sqrt{10}           = [3; 6, 6, 6, 6, 6, 6, 6, 6, \ldots]$
+    \item $\phantom{0}\sqrt{6} = [2; 2, 4, 2, 4, 2, 4, 2, 4, \ldots]$
+    \item $\sqrt{14}           = [3; 1, 2, 1, 6, 1, 2, 1, 6, \ldots]$
+    \item $\sbox0{$\sqrt{10}$}\makebox[\wd0][l]{$e$} = [2; 1, 2, 1, 1, 4, 1, 1, 6, \ldots]$
   \end{enumerate}
 \end{frame}
 
@@ -257,7 +267,7 @@
   \medskip
   \pause
 
-  \textbf{Bonus.} The bigger the coefficient after the cut-off is, the better
+  \hil{Bonus.} The bigger the coefficient after the cut-off is, the better
   is the approximation~$a/b$.
 \end{frame}
 
@@ -279,7 +289,7 @@
     \item $3$
     \item $[3;7]\phantom{,15,1} = \phantom{0}22/7\phantom{00} = \underline{3.14}28571428\ldots$
     \item $[3;7,15]\phantom{,1} = 333/106 = \underline{3.1415}094339\ldots$
-    \item $[3;7,15,1] = 355/113 = \underline{3.141592}9203\ldots$
+    \item $[3;7,15,1] = 355/113 = \underline{3.141592}9203\ldots$ (Milü)
   \end{enumerate}
 \end{frame}
 
@@ -315,6 +325,44 @@
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-1_61803398874989484820.pdf}\par}
 
+\begin{frame}\frametitle{The most irrational number}
+  For plants, the optimal angle is not \ldots
+  \begin{itemize}
+  \item $90^\circ = \frac{1}{4} \cdot 360^\circ$ nor is it
+  \item $45^\circ = \frac{1}{8} \cdot 360^\circ$.
+  \end{itemize}
+  Rather, it is the \hil{golden angle} $\Phi \cdot 360^\circ =
+  582^\circ$ (equivalently $222^\circ$), where~$\Phi$ is the \hil{golden
+  ratio}:
+  $\Phi = \frac{1 + \sqrt{5}}{2}$.
+
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{golden-ratio}
+  \end{center}
+
+  \begin{theorem}The golden ratio~$\Phi$ is the \hil{most irrational
+  number}.\end{theorem}
+  \medskip
+  \textbf{Proof.} $\Phi = \icfrac{1}{1}{1}{1}.$
+\end{frame}
+
+\begin{frame}\frametitle{Why the Fibonacci numbers?}
+  \vspace*{-1em}
+  \[ \Phi = \icfrac{1}{1}{1}{1} \]
+
+  \begin{enumerate}
+    \item $1\phantom{[,1,1,1,1,1,1,1,1]} = \phantom{0}1/1$
+    \item $[1;1]\phantom{,1,1,1,1,1,1,1} = \phantom{0}2/1$
+    \item $[1;1,1]\phantom{,1,1,1,1,1,1} \pause = \phantom{0}3/2$
+    \item $[1;1,1,1]\phantom{,1,1,1,1,1} \pause = \phantom{0}5/3$
+    \item $[1;1,1,1,1]\phantom{,1,1,1,1} \pause = \phantom{0}8/5$ \pause
+    \item $[1;1,1,1,1,1]\phantom{,1,1,1} = 13/8$
+    \item $[1;1,1,1,1,1,1]\phantom{,1,1} = 21/13$
+    \item $[1;1,1,1,1,1,1,1]\phantom{,1} = 34/21$
+    \item $[1;1,1,1,1,1,1,1,1] = 55/34$
+  \end{enumerate}
+\end{frame}
+
 
 \section{The ananas from SpongeBob SquarePants}
 
@@ -349,8 +397,6 @@ Plan of the talk:
 6. Vi Hart
 
 Mention rational tangles?
-
-Expansion of e?
 
 Relation to the number 5.
 
