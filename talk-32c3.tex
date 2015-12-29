@@ -4,21 +4,10 @@
 
 \usepackage[english]{babel}
 
-\usepackage{tikz}
-\usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{mathtools}
 \usepackage[cmtip,all]{xy}
 \newcommand{\longsquiggly}{\xymatrix{{}\ar@{~>}[r]&{}}}
-
-\usetikzlibrary{calc,shapes.callouts,shapes.arrows}
-\definecolor{darkred}{RGB}{220,0,0}
-\newcommand{\hcancel}[5]{%
-    \tikz[baseline=(tocancel.base)]{
-        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
-        \draw[darkred, line width=1mm] ($(tocancel.south west)+(#2,#3)$) -- ($(tocancel.north east)+(#4,#5)$);
-    }%
-}%
 
 \usepackage[protrusion=true,expansion=true]{microtype}
 
@@ -52,47 +41,10 @@
 
 \newcommand{\hil}[1]{{\usebeamercolor[fg]{item}{\textbf{#1}}}}
 
-\newcommand{\atpos}[1]{%
-  \begin{tikzpicture}[remember picture, overlay]%
-    \node[anchor=south east] at (current page.south east) {#1};
-  \end{tikzpicture}%
-}
-
-\newcommand{\centeredpar}[2]{%
-  \begin{center}
-    \colorbox{white}{\parbox{#1\textwidth}{%
-      #2%
-    }}%
-  \end{center}%
-}
-
 \newcommand{\icfrac}[4]{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \dfrac{1}{#4 + \ddots}}}}
 \newcommand{\icfracc}[3]{\dfrac{1}{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \ddots}}}}
 \newcommand{\icfraccc}[2]{\dfrac{1}{#1 + \dfrac{1}{#2 + \ddots}}}
 \newcommand{\icfracccc}[5]{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \dfrac{1}{#4 + \dfrac{1}{#5 + \ddots}}}}}
-
-% Gonzalo Medina, http://tex.stackexchange.com/a/228198
-\makeatletter
-\def\Mdescription#1{%
-  \advance\beamer@descdefault by \labelsep%
-  \list
-  {}
-  {\labelwidth\beamer@descdefault%
-  \leftmargin\beamer@descdefault%
-  \let\makelabel\beamer@descriptionitem
-  \settowidth\labelwidth{\beamer@descriptionitem{#1}}%
-  \setlength\leftmargin{\labelwidth}% 
-  \addtolength\leftmargin{\labelsep}%
-  }%
-  \beamer@cramped%
-  \raggedright
-  \beamer@firstlineitemizeunskip%
-}
-\def\endMdescription{\ifhmode\unskip\fi\endlist}
-\long\def\beamer@descriptionitem#1{%
-  \def\insertdescriptionitem{#1}%
-  {\usebeamertemplate**{description item}}\hfil}
-\makeatother
 
 \setbeameroption{show notes}
 \setbeamertemplate{note page}[plain]
@@ -415,7 +367,17 @@
   the coefficients in the continued fraction expansion are. With~$\Phi$, the
   coefficients are as small as possible. This is the reason why~$\Phi$ is the
   ``most irrational'' number. It is the hardest number to approximate by
-  fractions.\par
+  fractions.
+  \medskip
+
+  If you use a fraction~$\frac{a}{b}$ of the full circle as rotation angle,
+  then after~$b$ turns you'll arrive at exactly the same location as you
+  started. That's bad! Space is wasted this way.
+  \medskip
+
+  It's better to use a number which can \emph{not} be expressed as a fraction
+  -- an \emph{irrational number}. Of all irrational numbers, one should pick
+  the \emph{most irrational} one.\par
 }
 
 \begin{frame}\frametitle{Why the Fibonacci numbers?}
@@ -450,9 +412,30 @@
 \note{\justifying
   Watch
   \emph{Open Letter to Nickelodeon, Re: SpongeBob's Pineapple under the Sea} by
-  Vi Hart on YouTube.\par
+  Vi Hart on YouTube: \url{https://www.youtube.com/watch?v=gBxeju8dMho}\par
+
+  \centering
+  \includegraphics[scale=0.1]{vi-hart}
+  \bigskip
+
+  \emph{Check out an exercise sheet for more fun:} \\[0.2em]
+  \scriptsize
+  \url{http://rawgit.com/iblech/number5/master/pizzaseminar-en.pdf}
+  \url{http://rawgit.com/iblech/number5/master/pizzaseminar-de.pdf}%
+  \bigskip
+
+  \scalebox{2.8}{\large\hil{$\boldsymbol{\heartsuit}$}}
+  \par
 }
 
+\appendix
+
+\section{Image sources}
+
+\begin{frame}\frametitle{Image sources}
+  \scriptsize
+  \url{https://upload.wikimedia.org/wikipedia/commons/9/99/Vi_Hart.jpg}
+\end{frame}
 
 \end{document}
 
@@ -477,5 +460,3 @@ Plan of the talk:
 Mention rational tangles?
 
 Relation to the number 5.
-
-Translate exercise sheet!
