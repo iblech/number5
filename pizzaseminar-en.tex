@@ -133,47 +133,46 @@ holds.
 \end{aufgabe}
 
 \begin{aufgabe}{Icosahedron and dodecahedron}
-Sei einem regelmäßigen Ikosaeder ein regelmäßiges Dodekaeder einbeschrieben
-(Seitenflächenmittelpunkte auf Ecken). Zeige, dass das Verhältnis der Kantenlängen
-beider Objekte gleich $3:\Phi$ ist.
+Let a regular dodecahedron be inscribed in a regular icosahedron (midpoints of
+faces on vertices). Show that the ratio of the edge lengths of those two
+objects is~$3 : \Phi$.
 \end{aufgabe}
 
-\begin{aufgabe}{Kettenbruchentwicklung des goldenen Schnitts}
+\begin{aufgabe}{Continued fraction expansion of the golden ratio}
 \begin{enumerate}
-\item Zeige: $\Phi = 1 + \frac{1}{\Phi}$. Bonuspunkte gibt es, wenn
-du diese Identität allein mit der geometrischen Definition des goldenen
-Schnitts nachweist: Die Gesamtstrecke verhält sich zur größeren Teilstrecke
-wie die größere Teilstrecke zu kleineren.
-\item Folgere:
+\item Show: $\Phi = 1 + \frac{1}{\Phi}$. You earn valuable bonus points if you
+manage to verify this identity by using the geometric definition of the golden
+ratio: the total length of the segment is to the larger subsegment as the
+larger subsegment is to the smaller subsegment.
+\item Conclude:
 \[ \Phi = 1 + \frac{1}{1 + \dfrac{1}{1 + \frac{1}{\ddots}}}. \]
-\item Zeige: Die sukzessiven Approximationen des goldenen Schnitts, die sich
-durch Abschneidung der Kettenbruchentwicklung ergeben, sind von der
-Form~$f_{n+1}/f_n$.
+\item Prove: The sucessive approximations to the golden ratio obtained by
+truncating the continued fraction expansion are of the form~$f_{n+1}/f_n$.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Ableitung vs. Umkehrfunktion}
-Finde eine bijektive differenzierbare Funktion~$\RR^+ \to \RR^+$, deren
-Ableitung gleich ihrer Umkehrfunktion ist.
+\begin{aufgabe}{Derivative vs. inverse}
+Find a bijective and differentiable function~$\RR^+ \to \RR^+$ whose derivative
+equals its inverse.
 
-\emph{Tipp:} Versuche es mit dem Ansatz~$x \mapsto x^a$.
+\emph{Tipp:} Have a go with the ansatz~$x \mapsto x^a$.
 \end{aufgabe}
 
-\begin{aufgabe}{Beispiele für Kettenbruchentwicklungen}
+\begin{aufgabe}{Examples for continued fraction expansions}
 \begin{enumerate}
-\item Bestätige, dass~$\sqrt{2} = [1; 2, 2, \ldots]$.
-\item Bestätige, dass~$\sqrt{3} = [1; 1, 2, 1, 2, 1, 2, \ldots]$.
-\item Was ist die Kettenbruchentwicklung von~$\sqrt{5}$?
-\item Mach dir kurz klar: Jede reelle Zahl ist Lösung irgendeiner quadratischen
-Gleichung.
-\item Zeige: Jede Zahl mit periodischer Kettenbruchentwicklung ist Lösung einer
-gewissen quadratischen Gleichung \emph{mit rationalen Koeffizienten}.
+\item Verify that~$\sqrt{2} = [1; 2, 2, \ldots]$.
+\item Verify that~$\sqrt{3} = [1; 1, 2, 1, 2, 1, 2, \ldots]$.
+\item What's the continued fraction expansion of~$\sqrt{5}$?
+\item Convince yourself of the triviality of the following statement: Any real
+number is the solution of some quadratic equation.
+\item Prove: Every number whose continued fraction expansion is periodic is
+solution of some quadratic equation \emph{with rational coefficients}.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Kettenbruckentwicklung durch den euklidischen Algorithmus}
-Sei~$x$ eine nichtnegative reelle Zahl. Der euklidische Algorithmus produziere
-folgende Gleichungen:
+\begin{aufgabe}{Continued fraction expansion and the Euclidean algorithm}
+Let~$x$ be a nonnegative real number. Assume that the Euclidean algorithm
+produces the following equations:
 \begin{align*}
   x &= a_0 \cdot \sbox0{$r_0$}\makebox[\wd0][l]{$1$} + r_0 \\
   1 &= a_1 \cdot r_0 + r_1 \\
@@ -181,16 +180,15 @@ folgende Gleichungen:
   r_1 &= a_3 \cdot r_2 + r_3 \\
   r_2 &= a_4 \cdot r_3 + r_4
 \end{align*}
-Und so weiter. Die Zahlen~$a_n$ sind also nichtnegative ganze Zahlen
-und die Reste~$r_n$ sind jeweils kleiner als der zweite Faktor des
-nebenstehenden Produkts. Zeige:
+And so on. The numbers~$a_n$ are nonnegative integers and the residues~$r_n$
+are smaller than the second factor of the respective adjacent product. Prove:
 \[ x = a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{\ddots}}}. \]
 \end{aufgabe}
 % muss vor nächster Aufgabe stehen
 
 % muss nach vorheriger Aufgabe stehen
 \enlargethispage{1.8em}
-\begin{aufgabe}{Die Entdeckung der Irrationalität}
+\begin{aufgabe}{The discovery of irrationality}
 Als Entdecker der Irrationalität gilt der griechische Mathematiker Hippasos von
 Metapont. Er erkannte, dass der \emph{goldene Schnitt} irrational ist. Damit
 erschütterte er die Schule der Pythagoreer, denn diese waren von dem Kredo
