@@ -327,15 +327,8 @@
   \par
 \end{frame}
 
-\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_25.pdf}\par}
-\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_125.pdf}\par}
-\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-3_14159265358979323846.pdf}\par}
-\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-3_14159265358979323846.pdf}\par}
-\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
-\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-1_61803398874989484820.pdf}\par}
-
 \begin{frame}\frametitle{The most irrational number}
-  For plants, the optimal angle is not \ldots
+  For plants, the optimal angle of consecutive seeds is not \ldots
   \begin{itemize}
   \item $90^\circ = \frac{1}{4} \cdot 360^\circ$ nor is it
   \item $45^\circ = \frac{1}{8} \cdot 360^\circ$.
@@ -359,16 +352,8 @@
   The golden ratio appears in lots of places in nature and art. If you divide a
   segment in the golden ratio, the longer subsegment will be~$\Phi$ times as
   long as the shorter subsegment; more conceptually:
-  \footnotesize
-  \[ \text{total segment} : \text{longer subsegment} =
+  \[ \footnotesize \text{total segment} : \text{longer subsegment} =
     \text{longer subsegment} : \text{shorter subsegment}. \]
-
-  Recall that a number can the better be approximated by fractions the larger
-  the coefficients in the continued fraction expansion are. With~$\Phi$, the
-  coefficients are as small as possible. This is the reason why~$\Phi$ is the
-  ``most irrational'' number. It is the hardest number to approximate by
-  fractions.
-  \medskip
 
   If you use a fraction~$\frac{a}{b}$ of the full circle as rotation angle,
   then after~$b$ turns you'll arrive at exactly the same location as you
@@ -377,8 +362,53 @@
 
   It's better to use a number which can \emph{not} be expressed as a fraction
   -- an \emph{irrational number}. Of all irrational numbers, one should pick
-  the \emph{most irrational} one.\par
+  the \emph{most irrational} one.
+  \medskip
+
+  Recall that a number can the better be approximated by fractions the larger
+  the coefficients in the continued fraction expansion are. With~$\Phi$, the
+  coefficients are as small as possible. This is the reason why~$\Phi$ is the
+  ``most irrational'' number. It is the hardest number to approximate by
+  fractions.\par
 }
+
+\begin{frame}\frametitle{(Not) using the golden ratio}
+  \centering
+  \includegraphics[width=0.45\textwidth]{drehwinkel-400-1_61803398874989484820.pdf}
+
+  \includegraphics[width=0.25\textwidth]{drehwinkel-400-1_61525621097211707043.pdf}
+  \includegraphics[width=0.25\textwidth]{drehwinkel-400-1_61775621097211707043.pdf}
+  \includegraphics[width=0.25\textwidth]{drehwinkel-400-1_61831176652767262597.pdf}
+  \includegraphics[width=0.25\textwidth]{drehwinkel-400-1_62081176652767262597.pdf}
+  \par
+\end{frame}
+
+\note{\justifying
+  The middle figure uses the golden angle. The angle used in the four
+  figures in the bottom:
+  \begin{enumerate}
+    \item $\text{golden angle} - 1^\circ$
+    \item $\text{golden angle} - 0.1^\circ$
+    \item $\text{golden angle} + 0.1^\circ$
+    \item $\text{golden angle} + 1^\circ$
+  \end{enumerate}
+
+  You are invited to write a fancy interactive JavaScript/canvas demo. Use the
+  following simple formulas for the coordinates of the~$n$'th point,
+  where~$\varphi$ is the given angle to use ($\varphi = 1/4$ meaning 90
+  degrees).
+  \begin{align*}
+    x &= n \cdot \cos(2 \pi \varphi \cdot n) \\
+    y &= n \cdot \sin(2 \pi \varphi \cdot n)
+  \end{align*}
+}
+
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_25.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_125.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-3_14159265358979323846.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-3_14159265358979323846.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-1_61803398874989484820.pdf}\par}
 
 \begin{frame}\frametitle{Why the Fibonacci numbers?}
   \vspace*{-1em}
