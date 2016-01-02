@@ -37,6 +37,15 @@
 \renewcommand*\insertshorttitle{%
   \oldmacro\hfill\insertframenumber\,/\,\inserttotalframenumber\hfill}
 
+\newcommand{\backupstart}{
+  \newcounter{framenumberpreappendix}
+  \setcounter{framenumberpreappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+  \addtocounter{framenumberpreappendix}{-\value{framenumber}}
+  \addtocounter{framenumber}{\value{framenumberpreappendix}} 
+}
+
 \newcommand{\defeq}{\vcentcolon=}
 
 \newcommand{\hil}[1]{{\usebeamercolor[fg]{item}{\textbf{#1}}}}
@@ -333,7 +342,7 @@
   \item $90^\circ = \frac{1}{4} \cdot 360^\circ$ nor is it
   \item $45^\circ = \frac{1}{8} \cdot 360^\circ$.
   \end{itemize}
-  Rather, it is the \hil{golden angle} $\Phi \cdot 360^\circ =
+  Rather, it is the \hil{golden angle} $\Phi \cdot 360^\circ \approx
   582^\circ$ (equivalently $222^\circ$), where~$\Phi$ is the \hil{golden
   ratio}:
   $\Phi = \frac{1 + \sqrt{5}}{2} = 1.6180339887\ldots$
@@ -445,7 +454,7 @@
   Vi Hart on YouTube: \url{https://www.youtube.com/watch?v=gBxeju8dMho}\par
 
   \centering
-  \includegraphics[scale=0.1]{vi-hart}
+  \includegraphics[width=0.3\textwidth]{vi-hart}
   \bigskip
 
   \emph{Check out an exercise sheet for more fun:} \\[0.2em]
@@ -462,6 +471,8 @@
 
 \appendix
 
+\backupstart
+
 \section{Image sources}
 
 \begin{frame}\frametitle{Image sources}
@@ -475,6 +486,8 @@
   \mbox{\url{http://www.sciencedump.com/sites/default/files/styles/article_width/public/field/gallery/8247962.jpg}}
   \par
 \end{frame}
+
+\backupend
 
 \end{document}
 
