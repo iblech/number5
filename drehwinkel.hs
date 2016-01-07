@@ -9,6 +9,8 @@ points phi = go (0::Int) 1
     where
     go n z = (fromIntegral n * z) : go (n+1) (z * z0)
     z0     = cis (2 * pi * phi)
+-- TODO: Experiment with:
+--  go n z = (sqrt (fromIntegral n) * z) : go (n+1) (z * z0)
 
 main = do
     [phi] <- liftM (map read) getArgs
