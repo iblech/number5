@@ -1,0 +1,4 @@
+* Viele Folien sollten im Vollbild Parkettierungen zeigen.
+* Klar herausarbeiten, wieso unendliche aperiodische Parkettierungen
+  interessant sind.
+* Auf Beziehungen zu (Quasi-)Kristallen eingehen.
