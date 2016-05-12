@@ -13,7 +13,7 @@
 \usepackage[protrusion=true,expansion=true]{microtype}
 
 \title{Das Geheimnis der Zahl 5}
-\author[Tübinger Linuxtag]{Ingo Blechschmidt}
+\author[Tagesabschluss des Tübinger Linuxtags]{Ingo Blechschmidt \\[0.1em] \tiny \texttt{ingo.blechschmidt@math.uni-augsburg.de}}
 \institute{$(n+2)$-ter Tübinger Linuxtag}
 \date{11. Juni 2016}
 
@@ -56,7 +56,7 @@
 \newcommand{\icfraccc}[2]{\dfrac{1}{#1 + \dfrac{1}{#2 + \ddots}}}
 \newcommand{\icfracccc}[5]{#1 + \dfrac{1}{#2 + \dfrac{1}{#3 + \dfrac{1}{#4 + \dfrac{1}{#5 + \ddots}}}}}
 
-\setbeameroption{hide notes}
+\setbeameroption{show notes}
 \setbeamertemplate{note page}[plain]
 
 \begin{document}
@@ -170,7 +170,7 @@
 \note{\justifying
   Die Ziffern der Zahl~$e = 2{,}7182818284\ldots$, der Basis des natürlichen
   Logarithmus, bilden kein erkennbares Muster. Aber die Kettenbruchentwicklung
-  ist völlig regelmäßig.\par
+  ist völlig regelmäßig (und das kann man auch beweisen).\par
 }
 
 
@@ -179,8 +179,6 @@
 \begin{frame}\frametitle{Der euklidische Algorithmus}
   Zur Erinnerung: $\sqrt{2} = 1 + \icfracc{2}{2}{2} = 1{,}41421356\ldots$
   \bigskip
-
-  % XXX: Bild von Euklid und Angabe, wann der Algorithmus entdeckt wurde
 
   \begin{align*}
     1{,}41421356\ldots &= 1 \cdot 1{,}00000000\ldots + 0{,}41421356\ldots \\
@@ -192,6 +190,19 @@
     &\,\,\,\vdots
   \end{align*}
 \end{frame}
+
+\note{\justifying
+  Die Rechnung auf der vorherigen Folie setzt voraus, dass man die Ziffern
+  von~$\sqrt{2}$ schon hinreichend genau kennt. Aber auch, wenn das nicht der
+  Fall ist, kann man den euklidischen Algorithmus verwenden. Lediglich die
+  Darstellung wird komplizierter -- man rechnet dann mit lauter Termen, in
+  denen~$\sqrt{2}$ vorkommt.
+  \medskip
+
+  Es gibt sogar eine geometrische Möglichkeit, um einzusehen, dass der jeweils
+  kleinere Rest immer zweimal in den jeweils größeren Rest passt.
+  \par
+}
 
 \note{\justifying
   Wieso liefert der euklidische Algorithmus die Koeffizienten der
@@ -417,6 +428,11 @@
     \item $\text{goldener Winkel} + 1^\circ$
   \end{enumerate}
 
+  Der Code, der diese Abbildungen erzeugt hat, ist online unter
+  \url{https://github.com/iblech/number5}. Probiere doch deine
+  Lieblingszahlen als Drehwinkel aus!
+  \medskip
+
   Du bist herzlich eingeladen, eine tolle interaktive JavaScript/Canvas-Demo zu
   schreiben. Verwende die folgenden einfachen Formeln, um bei einem
   Drehwinkel~$\varphi$ die Koordinaten des~$n$-ten Punkts zu berechnen
@@ -431,6 +447,7 @@
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-0_125.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-3_14159265358979323846.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-3_14159265358979323846.pdf}\par}
+\note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61603398874989484820.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-1_61803398874989484820.pdf}\par}
 
@@ -452,19 +469,23 @@
 \end{frame}
 
 \note{\justifying
-  Using a fraction~$\frac{a}{b}$ of the full circle as rotation angle (given in
-  lowest terms) yields precisely~$b$ spirals. The animation at
+  Wählt man als Drehwinkel den Anteil~$\frac{a}{b}$ des Vollkreises
+  (vollständig gekürzt), so erhält man exakt~$b$ Spiralen.
+  Die Animation auf
   \[ \text{\scriptsize\url{http://rawgit.com/iblech/number5/master/drehwinkel-0_3027522935779816.mp4}} \]
-  shows a zoom when using~$33/109$ as rotation angle. Its
-  continued fraction expansion is
+  zeigt einen Zoom bei Verwendung von~$33/109 \cdot 360^\circ$ als Drehwinkel.
+  Die Kettenbruchentwicklung ist
   \[ \frac{33}{109} = \dfrac{1}{3 + \dfrac{1}{3 + \dfrac{1}{3 +
   \dfrac{1}{3}}}} \]
-  with truncations
+  \vspace*{-1.5em}
+
+  mit Abschneidungen
   \[ \dfrac{1}{3}, \qquad
   \dfrac{1}{3 + \dfrac{1}{3}} = \dfrac{3}{10}, \qquad
   \dfrac{1}{3 + \dfrac{1}{3 + \dfrac{1}{3}}} = \dfrac{10}{33}.
   \]
-  Therefore you first see three, then ten, then 33, and finally 109 spirals.
+  Daher sieht man zunächst drei, dann zehn, dann 33 und schließlich 109
+  Spiralen.
 }
 
 
@@ -480,20 +501,19 @@
 \end{frame}
 
 \note{\justifying
-  Watch
-  \emph{Open Letter to Nickelodeon, Re: SpongeBob's Pineapple under the Sea} by
-  Vi Hart on YouTube: \url{https://www.youtube.com/watch?v=gBxeju8dMho}\par
+  Vi Hart hat ein Video mit dem Titel
+  \emph{Open Letter to Nickelodeon, Re: SpongeBob's Pineapple under the Sea}
+  auf YouTube: \url{https://www.youtube.com/watch?v=gBxeju8dMho}\par
 
   \centering
   \includegraphics[width=0.3\textwidth]{vi-hart}
   \bigskip
 
-  \emph{Check out an exercise sheet for more fun:} \\[0.2em]
+  \emph{Lust auf Übungsaufgaben zum Thema?} \\[0.2em]
   \scriptsize
-  \url{http://rawgit.com/iblech/number5/master/pizzaseminar-en.pdf}
   \url{http://rawgit.com/iblech/number5/master/pizzaseminar-de.pdf}%
   \\
-  Exercise 12 explains the relation between the golden ratio and the number~5.
+  Aufgabe 12 erklärt die Verbindung zwischen dem goldenen Schnitt und der Zahl~5.
   \bigskip
 
   \scalebox{2.8}{\large\hil{$\boldsymbol{\heartsuit}$}}
@@ -552,10 +572,8 @@ Mention rational tangles?
 Relation to the number 5.
 
 
-paar grammatikfehler
-schneller das erste kapitel
-
 XXX: Mönchstory heraussuchen
 
 * sqrt[12]{2}-Basis erwähnen
 * Beginn der Mathematik thematisieren; so Verbindung zur Zahl 5 schaffen.
+* https

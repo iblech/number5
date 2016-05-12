@@ -1,10 +1,11 @@
-*.bak
 *.aux
+*.bak
 *.log
-*.out
 *.nav
+*.out
 *.snm
 *.toc
+*.vrb
 *.hi
 *.o
 drehwinkel

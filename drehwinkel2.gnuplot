@@ -16,6 +16,9 @@ plot "<./drehwinkel 3.14159265358979323846 | head -n 200" t "3.14159265358979323
 set output "drehwinkel-2000-3_14159265358979323846.pdf"
 plot "<./drehwinkel 3.14159265358979323846 | head -n 2000" t "3.14159265358979323846 (2000 points)" ps 1 pt 5 lc rgb "#9600ff"
 
+set output "drehwinkel-200-1_61603398874989484820.pdf"
+plot "<./drehwinkel 1.61603398874989484820 | head -n 200" t "1.61603398874989484820 (200 points; almost, but not quite, the golden ratio!)" ps 1 pt 5 lc rgb "#9600ff"
+
 set output "drehwinkel-200-1_61803398874989484820.pdf"
 plot "<./drehwinkel 1.61803398874989484820 | head -n 200" t "1.61803398874989484820 (200 points)" ps 1 pt 5 lc rgb "#9600ff"
 
