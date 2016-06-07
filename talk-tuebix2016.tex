@@ -11,10 +11,10 @@
 
 \usepackage[protrusion=true,expansion=true]{microtype}
 
-\title{The secret of the number 5}
+\title{Das Geheimnis der Zahl 5}
 \author{Ingo Blechschmidt}
-\institute{32th Chaos Communication Congress}
-\date{December 28th, 2015}
+\institute{Tübinger Linuxtag}
+\date{11. Juni 2016}
 
 \usetheme{Warsaw}
 \usecolortheme{seahorse}
@@ -66,7 +66,7 @@
   \vspace*{-2em}
   \begin{center}
     \small
-    \emph{Dedicated to Prof. Dr. Jost-Hinrich Eschenburg.}
+    \emph{Gewidmet an Prof. Dr. Jost-Hinrich Eschenburg.}
     \medskip
 
     \includegraphics[height=0.25\textheight]{sonnenblume}\quad
@@ -75,12 +75,12 @@
   \end{center}
 }
 
-\begin{frame}\frametitle{Outline}\tableofcontents\end{frame}
+\begin{frame}\frametitle{Gliederung}\tableofcontents\end{frame}
 
 
-\section{A design pattern in nature}
+\section{Ein Entwurfsmuster der Natur}
 
-\begin{frame}\frametitle{A design pattern in nature}
+\begin{frame}\frametitle{Ein Entwurfsmuster der Natur}
   \begin{center}
     \includegraphics[height=0.6\textheight]{sonnenblume2}
     \bigskip
@@ -92,7 +92,7 @@
       \includegraphics[height=0.2\textheight]{Bellis_perennis_white_(aka)}
     }
     \only<2>{
-      \hil{Fibonacci numbers:} \\
+      \hil{Fibonaccizahlen:} \\
       1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots
     }
   \end{center}
@@ -107,11 +107,11 @@
 }
 
 
-\section{Continued fractions}
+\section{Kettenbrüche}
 
-\subsection{Examples}
+\subsection{Beispiele}
 
-\begin{frame}\frametitle{A curious fraction}
+\begin{frame}\frametitle{Ein merkwürdiger Bruch}
   \only<2-3>{\vspace*{-1em}}
   \only<1>{\Huge}
   \only<1-3>{\[
@@ -120,31 +120,32 @@
   \only<2-3>{\vspace*{1em}}
 
   \pause
-  Crucial observation: Setting
+  Entscheidende Beobachtung: Wenn wir
   \only<1-3>{\[ x \defeq {?} - 1 = \icfracc{2}{2}{2}, \]}
   \only<4->{\[ x \defeq {?} - 1 = \icfraccc{2}{2}, \]}
   \pause
-  there is the identity
+  setzen, gilt
   \[ \frac{1}{2 + x} = x. \]
   \pause
   \pause
 
-  Multiplying by the denominator, we obtain
+  Multiplizieren mit dem Nenner liefert
   \only<5>{$1 = x \cdot (2 + x),$}%
   \only<6->{$1 = 2x + x^2,$}
   \pause
   \pause
-  so we only have to solve the quadratic equation
-  $0 = x^2 + 2x - 1,$
+  also müssen wir nur die quadratische Gleichung
+  $0 = x^2 + 2x - 1$
+  lösen,
   \pause
-  thus
+  somit
   \[ x = \frac{-2 + \sqrt{8}}{2} = -1 + \sqrt{2}
-    \quad\text{or}\quad
+    \quad\text{oder}\quad
      x = \frac{-2 - \sqrt{8}}{2} = -1 - \sqrt{2}. \]
-  It's the positive possibility.
+  Es ist die positive Möglichkeit.
 \end{frame}
 
-\begin{frame}\frametitle{More examples}
+\begin{frame}\frametitle{Weitere Beispiele}
   \only<1-2>{\vspace*{-2em}\begin{align*}
     \visible<2>{[1; 2, 2, 2, \ldots] =} \icfrac{1}{2}{2}{2} &= \sqrt{2} \\[1.5em]
     \visible<2>{[2; 4, 4, 4, \ldots] =} \icfrac{2}{4}{4}{4} &= \sqrt{5} \\[1.5em]
@@ -171,10 +172,10 @@
 }
 
 
-\subsection{Calculating the continued fraction expansion}
+\subsection{Berechnung der Kettenbruchentwicklung}
 
-\begin{frame}\frametitle{The Euclidean algorithm}
-  Recall $\sqrt{2} = [1; 2, 2, 2, \ldots] = 1.41421356\ldots$
+\begin{frame}\frametitle{Der euklidische Algorithmus}
+  Zur Erinnerung: $\sqrt{2} = [1; 2, 2, 2, \ldots] = 1.41421356\ldots$
   \begin{align*}
     1.41421356\ldots &= 1 \cdot 1.00000000\ldots + 0.41421356\ldots \\
     1.00000000\ldots &= 2 \cdot 0.41421356\ldots + 0.17157287\ldots \\
@@ -226,13 +227,13 @@
 }
 
 
-\subsection{Best approximations using continued fractions}
+\subsection{Bestapproximationen durch die Kettenbruchentwicklung}
 
-\begin{frame}\frametitle{Best approximations using continued fractions}
+\begin{frame}\frametitle{Bestapproximationen durch Kettenbrüche}
   \begin{theorem}
-  Cutting off the infinite fraction expansion of a number~$x$
-  yields a fraction $a/b$ which is closest to~$x$ under all fractions with
-  denominator~$\leq b$.
+  Wenn man die Kettenbruchentwicklung einer Zahl~$x$ abschneidet, erhält man
+  einen Bruch~$a/b$, der unter allen Brüchen mit Nenner~$\leq b$ der Zahl~$x$
+  am nächsten liegt.
   \end{theorem}
   \[
     \sqrt{2} = \icfrac{1}{2}{2}{2} \longsquiggly
@@ -241,8 +242,8 @@
   \medskip
   \pause
 
-  \hil{Bonus.} The bigger the coefficient after the cut-off is, the better
-  is the approximation~$a/b$.
+  \hil{Bonus.} Je größer der Koeffizient nach der Abschneidestelle ist, desto
+  besser ist die Näherung~$a/b$.
 \end{frame}
 
 \note{\justifying
@@ -254,12 +255,12 @@
 }
 
 
-\section{\texorpdfstring{Approximations of $\pi$}{Approximations of π}}
+\section{\texorpdfstring{Approximationen von $\pi$}{Approximationen von π}}
 
 \begin{frame}[plain,c]
   \centering\Huge
-  \scalebox{2.8}{\hil{Love is}} \\[0.6em]
-  \scalebox{2.8}{\hil{important.}}
+  \scalebox{2.8}{\hil{Liebe ist}} \\[0.6em]
+  \scalebox{2.8}{\hil{wichtig.}}
 
   \bigskip
   \bigskip
@@ -270,8 +271,8 @@
 
 \begin{frame}[plain,c]
   \centering\Huge
-  \scalebox{2.8}{\hil{Pi is}} \\[0.6em]
-  \scalebox{2.8}{\hil{important.}}
+  \scalebox{2.8}{\hil{Pi ist}} \\[0.6em]
+  \scalebox{2.8}{\hil{wichtig.}}
 
   \bigskip
   \bigskip
@@ -280,7 +281,7 @@
   \par
 \end{frame}
 
-\begin{frame}\frametitle{Approximations of $\pi$}
+\begin{frame}\frametitle{Approximationen von $\pi$}
   \[ \pi = 3.1415926535\ldots = \icfracccc{3}{7}{15}{1}{292} \]
 
   \begin{enumerate}
@@ -312,15 +313,15 @@
 }
 
 
-\section{The Mandelbrot fractal}
+\section{Das Mandelbrot-Fraktal}
 
-\begin{frame}\frametitle{The Mandelbrot fractal}
+\begin{frame}\frametitle{Das Mandelbrot-Fraktal}
   \centering
   \includegraphics[width=0.8\textwidth]{mandelbrot}
   \medskip
   \pause
 
-  The Fibonacci numbers show up in the Mandelbrot fractal.
+  Im Mandelbrot-Fraktal tauchen die Fibonaccizahlen auf.
   \par
 \end{frame}
 
@@ -330,33 +331,33 @@
 }
 
 
-\section{Spirals in nature}
+\section{Spiralen in der Natur}
 
-\begin{frame}\frametitle{Spirals in nature}
+\begin{frame}\frametitle{Spiralen in der Natur}
   \centering
   \includegraphics[height=0.8\textheight]{sonnenblume2}
   \par
 \end{frame}
 
-\begin{frame}\frametitle{The most irrational number}
-  For plants, the optimal angle of consecutive seeds is not \ldots
+\begin{frame}\frametitle{Die irrationalste aller Zahlen}
+  Für Pflanzen ist der optimale Winkel für aufeinanderfolgende XXX weder \ldots
   \begin{itemize}
-  \item $90^\circ = \frac{1}{4} \cdot 360^\circ$ nor is it
+  \item $90^\circ = \frac{1}{4} \cdot 360^\circ$ noch
   \item $45^\circ = \frac{1}{8} \cdot 360^\circ$.
   \end{itemize}
-  Rather, it is the \hil{golden angle} $\Phi \cdot 360^\circ \approx
-  582^\circ$ (equivalently $222^\circ$), where~$\Phi$ is the \hil{golden
-  ratio}:
+  Stattdessen ist er der \hil{goldene Winkel} $\Phi \cdot 360^\circ \approx
+  582^\circ$ (äquivalent: $222^\circ$), wobei~$\Phi$ der \hil{goldene
+  Schnitt} ist:
   $\Phi = \frac{1 + \sqrt{5}}{2} = 1.6180339887\ldots$
 
   \begin{center}
     \includegraphics[width=0.7\textwidth]{golden-ratio}
   \end{center}
 
-  \begin{theorem}The golden ratio~$\Phi$ is the \hil{most irrational
-  number}.\end{theorem}
+  \begin{theorem}Der goldene Schnitt~$\Phi$ ist die \hil{irrationalste aller
+  Zahlen}.\end{theorem}
   \medskip
-  \textbf{Proof.} $\Phi = \icfrac{1}{1}{1}{1}.$
+  \textbf{Beweis.} $\Phi = \icfrac{1}{1}{1}{1}.$
 \end{frame}
 
 \note{\justifying
@@ -383,7 +384,7 @@
   fractions.\par
 }
 
-\begin{frame}\frametitle{(Not) using the golden angle}
+\begin{frame}\frametitle{(Nicht-)Verwendung des goldenen Winkels}
   \centering
   \includegraphics[width=0.45\textwidth]{drehwinkel-400-1_61803398874989484820.pdf}
 
@@ -421,7 +422,7 @@
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-200-1_61803398874989484820.pdf}\par}
 \note{\centering\includegraphics[height=0.95\textheight]{drehwinkel-2000-1_61803398874989484820.pdf}\par}
 
-\begin{frame}\frametitle{Why the Fibonacci numbers?}
+\begin{frame}\frametitle{Wieso die Fibonaccizahlen?}
   \vspace*{-1em}
   \[ \Phi = \icfrac{1}{1}{1}{1} \]
 
@@ -455,14 +456,14 @@
 }
 
 
-\section{The pineapple from SpongeBob SquarePants}
+\section{Die Ananas aus SpongeBob Schwammkopf}
 
-\begin{frame}\frametitle{The pineapple from SpongeBob SquarePants}
+\begin{frame}\frametitle{Die Ananas aus SpongeBob Schwammkopf}
   \centering
   \includegraphics[width=0.65\textwidth]{spongebob-ananas}
   \medskip
 
-  By Vi Hart, recreational mathemusician.
+  Von Vi Hart, Mathemusikerin.
   \par
 \end{frame}
 
@@ -491,7 +492,7 @@
 
 \backupstart
 
-\section{Image sources}
+\section{Bildquellen}
 
 \begin{frame}\frametitle{Image sources}
   \tiny
