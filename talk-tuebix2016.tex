@@ -2,8 +2,9 @@
 
 \usepackage{etex}
 
-\usepackage[english]{babel}
+\usepackage[ngerman]{babel}
 
+\usepackage{multicol}
 \usepackage{ragged2e}
 \usepackage{mathtools}
 \usepackage[cmtip,all]{xy}
@@ -12,8 +13,8 @@
 \usepackage[protrusion=true,expansion=true]{microtype}
 
 \title{Das Geheimnis der Zahl 5}
-\author{Ingo Blechschmidt}
-\institute{Tübinger Linuxtag}
+\author[Tübinger Linuxtag]{Ingo Blechschmidt}
+\institute{$(n+2)$-ter Tübinger Linuxtag}
 \date{11. Juni 2016}
 
 \usetheme{Warsaw}
@@ -99,10 +100,10 @@
 \end{frame}
 
 \note{\justifying
-  The number of spirals on a sunflower is always a Fibonacci number (or a
-  number very close to a Fibonacci number), for instance in the large picture
-  on the previous slide there are 21 clockwise spirals and 34
-  counterclockwise ones. Why?
+  Die Anzahl Spiralen auf einer Sonnenblume ist stets eine Fibonaccizahl (oder
+  eine Zahl, die sehr nah an einer Fibonaccizahl ist). Etwa waren im Foto auf
+  der vorherigen Folie 21 Spiralen im Uhrzeigersinn und 34 Spiralen im
+  Gegenuhrzeigersinn sichtbar. Wieso bloß?
   \par
 }
 
@@ -121,8 +122,8 @@
 
   \pause
   Entscheidende Beobachtung: Wenn wir
-  \only<1-3>{\[ x \defeq {?} - 1 = \icfracc{2}{2}{2}, \]}
-  \only<4->{\[ x \defeq {?} - 1 = \icfraccc{2}{2}, \]}
+  \only<1-3>{\[ x \defeq {?} - 1 = \icfracc{2}{2}{2} \]}
+  \only<4->{\[ x \defeq {?} - 1 = \icfraccc{2}{2} \]}
   \pause
   setzen, gilt
   \[ \frac{1}{2 + x} = x. \]
@@ -161,43 +162,49 @@
     \item $\sqrt{10}           = [3; 6, 6, 6, 6, 6, 6, 6, 6, \ldots]$
     \item $\phantom{0}\sqrt{6} = [2; 2, 4, 2, 4, 2, 4, 2, 4, \ldots]$
     \item $\sqrt{14}           = [3; 1, 2, 1, 6, 1, 2, 1, 6, \ldots]$
-    \item $\sbox0{$\sqrt{10}$}\makebox[\wd0][l]{$e$} = [2; 1, 2, 1, 1, 4, 1, 1, 6, \ldots]$
+    \item $\sbox0{$\sqrt{10}$}\makebox[\wd0][r]{$e$} = [2; 1, 2, 1, 1, 4, 1, 1, 6, \ldots]$ \\[0.2em]
+    $\phantom{\sqrt{10}} = 2{,}71828182845904523536\ldots$
   \end{enumerate}
 \end{frame}
 
 \note{\justifying
-  The digits of the number~$e = 2.7182818284\ldots$, the basis of the natural
-  logarithm, do not have any concernible pattern. But its continued fraction
-  expansion is completely regular.\par
+  Die Ziffern der Zahl~$e = 2{,}7182818284\ldots$, der Basis des natürlichen
+  Logarithmus, bilden kein erkennbares Muster. Aber die Kettenbruchentwicklung
+  ist völlig regulär.\par
 }
 
 
 \subsection{Berechnung der Kettenbruchentwicklung}
 
 \begin{frame}\frametitle{Der euklidische Algorithmus}
-  Zur Erinnerung: $\sqrt{2} = [1; 2, 2, 2, \ldots] = 1.41421356\ldots$
+  Zur Erinnerung: $\sqrt{2} = 1 + \icfracc{2}{2}{2} = 1{,}41421356\ldots$
+  \bigskip
+
+  % XXX: Bild von Euklid und Angabe, wann der Algorithmus entdeckt wurde
+
   \begin{align*}
-    1.41421356\ldots &= 1 \cdot 1.00000000\ldots + 0.41421356\ldots \\
-    1.00000000\ldots &= 2 \cdot 0.41421356\ldots + 0.17157287\ldots \\
-    0.41421356\ldots &= 2 \cdot 0.17157287\ldots + 0.07106781\ldots \\
-    0.17157287\ldots &= 2 \cdot 0.07106781\ldots + 0.02943725\ldots \\
-    0.07106781\ldots &= 2 \cdot 0.02943725\ldots + 0.01219330\ldots \\
-    0.02943725\ldots &= 2 \cdot 0.01219330\ldots + 0.00505063\ldots \\
+    1{,}41421356\ldots &= 1 \cdot 1{,}00000000\ldots + 0{,}41421356\ldots \\
+    1{,}00000000\ldots &= 2 \cdot 0{,}41421356\ldots + 0{,}17157287\ldots \\
+    0{,}41421356\ldots &= 2 \cdot 0{,}17157287\ldots + 0{,}07106781\ldots \\
+    0{,}17157287\ldots &= 2 \cdot 0{,}07106781\ldots + 0{,}02943725\ldots \\
+    0{,}07106781\ldots &= 2 \cdot 0{,}02943725\ldots + 0{,}01219330\ldots \\
+    0{,}02943725\ldots &= 2 \cdot 0{,}01219330\ldots + 0{,}00505063\ldots \\
     &\,\,\,\vdots
   \end{align*}
 \end{frame}
 
 \note{\justifying
-  Why does the Euclidean algorithm give the continued fraction coefficients?
-  Let's write
+  Wieso liefert der euklidische Algorithmus die Koeffizienten der
+  Kettenbruchentwicklung? Um das einzusehen, schreiben wir
   \begin{align*}
     x   &= a_0 \cdot \sbox0{$r_0$}\makebox[\wd0][l]{$1$} + r_0 \\
     1   &= a_1 \cdot r_0 + r_1 \\
     r_0 &= a_2 \cdot r_1 + r_2 \\
     r_1 &= a_3 \cdot r_2 + r_3
   \end{align*}
-  and so on, where the numbers~$a_n$ are natural numbers and the residues~$r_n$
-  are smaller than the second factor of the respective adjacent product. Then:
+  und so weiter. Dabei sind die Zahlen~$a_n$ natürliche Zahlen und die Reste~$r_n$
+  sind jeweils kleiner als der zweite Faktor des jeweiligen nebenstehenden
+  Produkts. Dann gilt:
   \begin{align*}
     x &= a_0 + r_0 = a_0 + 1/(1/r_0) \\
       &= a_0 + 1/(a_1 + r_1/r_0) = a_0 + 1/(a_1 + 1/(r_0/r_1)) \\
@@ -206,23 +213,24 @@
 }
 
 \note{\justifying
-  In the beautiful language Haskell, the code for lazily calculating the
-  infinite continued fraction expansion is only one line long (the type
-  declaration is optional).
+  In der wunderschönen Programmiersprache Haskell ist der Code, um die
+  unendliche Kettenbruchentwicklung zu berechnen, nur eine Zeile lang (die
+  Typdeklaration ist optional):
   \medskip
 
   {\scriptsize\texttt{cf :: Double -> [Integer]}\\
   \texttt{cf x = a : cf (1 / (x - fromIntegral a)) where a = floor x}\par}
   \medskip
 
-  So the continued fraction expansion of a number~$x$ begins
-  with~$a$, the integral part of~$x$, and continues with the
-  continued fraction expansion of~$1 / (x-a)$.
+  Die Kettenbruchentwicklung einer Zahl~$x$ beginnt also mit~$a$, dem
+  ganzzahligen Anteil von~$x$, und geht dann mit der Kettenbruchentwicklung
+  von~$1 / (x-a)$ weiter.
   \medskip
 
-  Note that because of floating-point inaccuracies, only the first few terms of
-  the expansion are reliable. For instance,~\texttt{cf (sqrt 6)} could yield
-  \[ \scriptsize\texttt{[2,2,4,2,4,2,4,2,4,2,4,2,4,2,4,2,2,1,48,2,4,6,1,\ldots\!\!]}. \]
+  Wegen Rundungsfehlern kann man sich nur auf die ersten paar Terme
+  der Entwicklung verlassen. Zum Beispiel könnte~\texttt{cf (sqrt 6)} folgendes
+  Ergebnis liefern:
+  \[ \texttt{[2,2,4,2,4,2,4,2,4,2,4,2,4,2,4,2,2,1,48,2,4,6,1,\ldots\!\!]}. \]
   \par
 }
 
@@ -237,7 +245,7 @@
   \end{theorem}
   \[
     \sqrt{2} = \icfrac{1}{2}{2}{2} \longsquiggly
-    1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2}}} = \frac{17}{12} \approx 1.42
+    1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2}}} = \frac{17}{12} \approx 1{,}42
   \]
   \medskip
   \pause
@@ -247,10 +255,10 @@
 \end{frame}
 
 \note{\justifying
-  More precisely, the bonus statement is that the distance from~$x$ to~$a/b$ is
-  less than~$1 / (a_n a_{n+1})$, where~$a_n$ is the last coefficient to be
-  included in the cut-off and~$a_{n+1}$ is the first coefficient after the
-  cut-off.
+  Präziser formuliert besagt der Zusatz, dass die Entfernung von~$x$ zu~$a/b$
+  kleiner als~$1 / (a_n a_{n+1})$ ist, wobei~$a_n$ der letzte Koeffizient
+  unmittelbar vor der Abschneidestelle und~$a_{n+1}$ der erste Koeffizient
+  direkt danach ist.
   \par
 }
 
@@ -282,33 +290,35 @@
 \end{frame}
 
 \begin{frame}\frametitle{Approximationen von $\pi$}
-  \[ \pi = 3.1415926535\ldots = \icfracccc{3}{7}{15}{1}{292} \]
+  \[ \pi = 3{,}1415926535\ldots = \icfracccc{3}{7}{15}{1}{292} \]
 
   \begin{enumerate}
     \item $3$
-    \item $[3;7]\phantom{,15,1} = \phantom{0}22/7\phantom{00} = \underline{3.14}28571428\ldots$
-    \item $[3;7,15]\phantom{,1} = 333/106 = \underline{3.1415}094339\ldots$
-    \item $[3;7,15,1] = 355/113 = \underline{3.141592}9203\ldots$ (Milü)
+    \item $[3;7]\phantom{,15,1} = \phantom{0}22/7\phantom{00} = \underline{3{,}14}28571428\ldots$
+    \item $[3;7,15]\phantom{,1} = 333/106 = \underline{3{,}1415}094339\ldots$
+    \item $[3;7,15,1] = 355/113 = \underline{3{,}141592}9203\ldots$ (Milü)
   \end{enumerate}
 \end{frame}
 
 \note{\justifying
-  We do not know for sure how people in ancient times calculated approximations
-  to~$\pi$. But one possibility is that they used some form of the Euclidean
-  algorithm (of course not using decimal expansions, but for instance strings
-  of various lengths).
+  Man weiß natürlich nicht mit Sicherheit, wie in der Antike Näherungen
+  für~$\pi$ berechnet wurden. Vorstellbar ist aber, dass eine Form des
+  euklidischen Algorithmus eingesetzt wurde (natürlich nicht mit Dezimalbrüchen
+  notiert, sondern zum Beispiel mit Schnüren unterschiedlicher Längen
+  durchgeführt).
   \medskip
 
-  Because the coefficient~$292$ appearing in the continued fraction expansion
-  of~$\pi$ is exceptionally large, the approximation~$355/113$ is exceptionally
-  good. That's a nice mathematical accident! I like to think that better
-  approximations were not physically obtainable in ancient times, but thanks to
-  this accident the best approximation that was obtainable was in fact an
-  extremely good one. In particular, it's much better than the
-  denominator~$113$ might want us to think.
+  Weil der Koeffizient~$292$ in der Kettenbruchentwicklung von~$\pi$
+  exzeptionell groß ist, ist die Approximation~$355/113$ exzeptionell gut.
+  Das ist ein schöner mathematischer Zufall! Mir gefällt die Vorstellung, dass
+  bessere Approximationen in der Antike nicht berechenbar waren, aber dass dank
+  dieses Zufalls die beste noch zugängliche Approximation tatsächlich eine
+  außerordentlich gute war. Insbesondere ist sie viel besser, als der
+  Nenner~$113$ vermuten lassen würde.
   \medskip
 
-  NB: The fraction~$355/113$ is easily memorized (11--33--55).
+  NB: Die Näherung~$355/113$ kann man sich leicht einprägen (11--33--55).
+  % XXX: NB
   \par
 }
 
@@ -326,8 +336,8 @@
 \end{frame}
 
 \note{\justifying
-  See \url{http://math.bu.edu/DYSYS/FRACGEOM2/node7.html} for an explanation of
-  where and why the Fibonacci numbers show up in the Mandelbrot fractal.\par
+  Eine Erklärung, wo und weshalb die Fibonaccizahlen im Mandelbrot-Fraktal
+  auftreten, steht auf \url{http://math.bu.edu/DYSYS/FRACGEOM2/node7.html}.\par
 }
 
 
@@ -340,19 +350,20 @@
 \end{frame}
 
 \begin{frame}\frametitle{Die irrationalste aller Zahlen}
-  Für Pflanzen ist der optimale Winkel für aufeinanderfolgende XXX weder \ldots
-  \begin{itemize}
-  \item $90^\circ = \frac{1}{4} \cdot 360^\circ$ noch
-  \item $45^\circ = \frac{1}{8} \cdot 360^\circ$.
-  \end{itemize}
+  \small
+  Der optimale Winkel für aufeinanderfolgende Samen ist weder
+  \[ 90^\circ = \frac{1}{4} \cdot 360^\circ \qquad\text{noch}\qquad
+    45^\circ = \frac{1}{8} \cdot 360^\circ. \]
+  \pause
   Stattdessen ist er der \hil{goldene Winkel} $\Phi \cdot 360^\circ \approx
-  582^\circ$ (äquivalent: $222^\circ$), wobei~$\Phi$ der \hil{goldene
-  Schnitt} ist:
-  $\Phi = \frac{1 + \sqrt{5}}{2} = 1.6180339887\ldots$
+  582^\circ$ (äqv.: $138^\circ$):
 
   \begin{center}
     \includegraphics[width=0.7\textwidth]{golden-ratio}
   \end{center}
+  \[ \Phi = \text{\hil{goldener Schnitt}} = \frac{1 + \sqrt{5}}{2} = 1{,}6180339887\ldots \]
+
+  \pause
 
   \begin{theorem}Der goldene Schnitt~$\Phi$ ist die \hil{irrationalste aller
   Zahlen}.\end{theorem}
@@ -361,27 +372,29 @@
 \end{frame}
 
 \note{\justifying
-  The golden ratio appears in lots of places in nature and art. If you divide a
-  segment in the golden ratio, the longer subsegment will be~$\Phi$ times as
-  long as the shorter subsegment; more conceptually:
-  \[ \footnotesize \text{total segment} : \text{longer subsegment} =
-    \text{longer subsegment} : \text{shorter subsegment}. \]
+  Der goldene Schnitt kommt an vielen Stellen in Natur und Kunst vor.
+  Wenn man eine Strecke im goldenen Schnitt teilt, so wird das längere
+  Teilstück genau~$\Phi$ mal so groß sein wie das kleinere Teilstück.
+  Konzeptioneller:
+  {\footnotesize\[\text{Gesamtstrecke} : \text{längeres Teilstück} =
+    \text{längeres Teilstück} : \text{kürzeres Teilstück}. \]\par}
 
-  If you use a fraction~$\frac{a}{b}$ of the full circle as rotation angle,
-  then after~$b$ turns you'll arrive at exactly the same location as you
-  started. That's bad! Space is wasted this way.
+  Wenn man einen Bruchanteil~$\frac{a}{b}$ des Vollkreises als Drehwinkel
+  verwendet, ist man nach~$b$ Umdrehungen wieder am Ausgangsort angelangt.
+  Das ist schlecht! So vergeudet man Platz.
   \medskip
 
-  It's better to use a number which can \emph{not} be expressed as a fraction
-  -- an \emph{irrational number}. Of all irrational numbers, one should pick
-  the \emph{most irrational} one.
+  Es ist besser, einen Anteil des Vollkreises zu nehmen, der \emph{nicht} als
+  Bruchzahl ausgedrückt werden kann -- eine \emph{irrationale Zahl}. Von allen
+  irrationalen Zahlen sollte man die wählen, die \emph{am irrationalsten} ist.
   \medskip
 
-  Recall that a number can the better be approximated by fractions the larger
-  the coefficients in the continued fraction expansion are. With~$\Phi$, the
-  coefficients are as small as possible. This is the reason why~$\Phi$ is the
-  ``most irrational'' number. It is the hardest number to approximate by
-  fractions.\par
+  Eine Zahl lässt sich umso besser durch Brüche approximieren, je größer die
+  Koeffizienten in der Kettenbruchentwicklung sind. Bei~$\Phi$ sind die
+  Koeffizienten dagegen so klein wie nur möglich. Das ist der Grund,
+  wieso~$\Phi$ die "`irrationalste"' Zahl ist. Sie ist von allen Zahlen die,
+  die sich am schwersten durch Brüche annähern lässt.\par
+  % XXX umso
 }
 
 \begin{frame}\frametitle{(Nicht-)Verwendung des goldenen Winkels}
@@ -396,19 +409,19 @@
 \end{frame}
 
 \note{\justifying
-  The top figure uses the golden angle. The angles used in the four
-  figures in the bottom are:
+  In der oberen Abbildung wurde der goldene Winkel verwendet. Die Winkel in den
+  anderen vier Abbildungen waren dagegen:
   \begin{enumerate}
-    \item $\text{golden angle} - 1^\circ$
-    \item $\text{golden angle} - 0.1^\circ$
-    \item $\text{golden angle} + 0.1^\circ$
-    \item $\text{golden angle} + 1^\circ$
+    \item $\text{goldener Winkel} - 1^\circ$
+    \item $\text{goldener Winkel} - 0{,}1^\circ$
+    \item $\text{goldener Winkel} + 0{,}1^\circ$
+    \item $\text{goldener Winkel} + 1^\circ$
   \end{enumerate}
 
-  You are invited to write a fancy interactive JavaScript/canvas demo. Use the
-  following simple formulas for the coordinates of the~$n$'th point,
-  where~$\varphi$ is the given angle to use ($\varphi = 1/4$ meaning 90
-  degrees).
+  Du bist herzlich eingeladen, eine tolle interaktive JavaScript/Canvas-Demo zu
+  schreiben. Verwende die folgenden einfachen Formeln, um bei einem
+  Drehwinkel~$\varphi$ die Koordinaten des~$n$-ten Punkts zu berechnen
+  (die Einheiten sind so, dass $\varphi = 1/4$ den Winkel $90^\circ$ bedeutet).
   \begin{align*}
     x &= n \cdot \cos(2 \pi \varphi \cdot n) \\
     y &= n \cdot \sin(2 \pi \varphi \cdot n)
@@ -492,9 +505,16 @@
 
 \backupstart
 
+\begin{frame}\frametitle{Mathecamp in den Ferien \\[-0.4em] \scriptsize vom 20. bis 26. August 2016 in Violau}
+  \vspace{-0.4cm}
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{mathecamp-gruppenfoto}
+  \end{center}
+\end{frame}
+
 \section{Bildquellen}
 
-\begin{frame}\frametitle{Image sources}
+\begin{frame}\frametitle{Bildquellen}
   \tiny
   \url{https://upload.wikimedia.org/wikipedia/commons/9/99/Vi_Hart.jpg}
   \url{http://joachim-reichel.org/software/fraktal/mandelbrot_large.png}
@@ -531,3 +551,9 @@ Plan of the talk:
 Mention rational tangles?
 
 Relation to the number 5.
+
+
+paar grammatikfehler
+schneller das erste kapitel
+
+XXX: Mönchstory heraussuchen
